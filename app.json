@@ -1,0 +1,8 @@
+{
+    "name": "UNITN Statistica",
+    "description": "A nodejs server to test unitn - computer science - statistic course exercises",
+    "repository": "https://github.com/euberdeveloper/unitn-statistica",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "keywords": ["statistica"],
+    "image": "heroku/nodejs"
+}

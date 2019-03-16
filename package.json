@@ -1,0 +1,25 @@
+{
+  "name": "unitn-statistica",
+  "version": "1.0.0",
+  "description": "A nodejs server to test unitn - computer science - statistic course exercises",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "main.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/euberdeveloper/unitn-statistica.git"
+  },
+  "author": "Euber Developer <euberdeveloper@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/euberdeveloper/unitn-statistica/issues"
+  },
+  "homepage": "https://github.com/euberdeveloper/unitn-statistica#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
