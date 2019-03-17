@@ -16,6 +16,7 @@ import { MAT_DATE_LOCALE } from '@angular/material';
 import { GetSolutionComponent } from './get-solution/get-solution.component';
 import { GetSolutionFormComponent } from './get-solution/get-solution-form/get-solution-form.component';
 import { GetSolutionProgressComponent } from './get-solution/get-solution-progress/get-solution-progress.component';
+import { GetSolutionSolutionComponent } from './get-solution/get-solution-solution/get-solution-solution.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { GetSolutionProgressComponent } from './get-solution/get-solution-progre
     GetSolutionComponent,
     GetSolutionFormComponent,
     GetSolutionProgressComponent,
+    GetSolutionSolutionComponent,
   ],
   imports: [
     BrowserModule,

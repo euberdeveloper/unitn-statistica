@@ -1,0 +1,15 @@
+<mat-card>
+
+    <mat-card-header fxLayoutAlign="center center">
+      <mat-card-title id="title">
+        <span>Soluzioni</span>
+      </mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content id="body" fxLayout="column" fxLayoutAlign="center center">
+  
+      <h3 *ngFor="let solution of solutions">{{ solution }}</h3>
+  
+    </mat-card-content>
+  
+  </mat-card>
