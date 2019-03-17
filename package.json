@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/euberdeveloper/unitn-statistica#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "morgan": "^1.9.1"
   }
 }

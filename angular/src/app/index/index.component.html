@@ -1,0 +1,45 @@
+<div id="content" fxFlexFill fxLayoutAlign="center center">
+
+  <mat-card fxFlex="30">
+
+    <mat-card-header fxLayoutAlign="center center">
+      <mat-card-title id="title">
+        <span>Home</span>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content id="body" fxLayout="row" fxLayoutAlign="center center">
+
+      <form [formGroup]="form" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+        <mat-form-field fxFlexAlign="stretch">
+          <input matInput type="text" placeholder="User" formControlName="user" required/>
+          <mat-error *ngIf="user.hasError('required')">User is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlexAlign="stretch">
+          <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="password"
+            required/>
+          <mat-error *ngIf="password.hasError('required')">Password is <strong>required</strong></mat-error>
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility'
+            }}</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlexAlign="stretch">
+          <input matInput id="exercise" placeholder="Data esercizio" [matDatepicker]="exercise_picker" (click)="exercise_picker.open()" formControlName="exercise" readonly required>
+          <mat-datepicker-toggle matSuffix [for]="exercise_picker"></mat-datepicker-toggle>
+          <mat-datepicker #exercise_picker></mat-datepicker>
+          <mat-error *ngIf="exercise.hasError('required')">Exercise is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-actions id="buttons" fxLayoutAlign="center center">
+      <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="go()">GO</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>
