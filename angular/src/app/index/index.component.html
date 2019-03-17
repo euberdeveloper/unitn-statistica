@@ -26,7 +26,7 @@
         </mat-form-field>
 
         <mat-form-field fxFlexAlign="stretch">
-          <input matInput id="exercise" placeholder="Data acquisto" [matDatepicker]="exercise_picker" (click)="exercise_picker.open()" formControlName="exercise" readonly required>
+          <input matInput id="exercise" placeholder="Data esercizio" [matDatepicker]="exercise_picker" (click)="exercise_picker.open()" formControlName="exercise" readonly required>
           <mat-datepicker-toggle matSuffix [for]="exercise_picker"></mat-datepicker-toggle>
           <mat-datepicker #exercise_picker></mat-datepicker>
           <mat-error *ngIf="exercise.hasError('required')">Exercise is <strong>required</strong></mat-error>
@@ -37,7 +37,7 @@
     </mat-card-content>
 
     <mat-card-actions id="buttons" fxLayoutAlign="center center">
-      <button mat-raised-button color="primary">SIGN IN</button>
+      <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="go()">GO</button>
     </mat-card-actions>
 
   </mat-card>

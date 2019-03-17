@@ -1,0 +1,35 @@
+const DiceAndBalls = require('./2019-03-15');
+
+module.exports = [
+    
+    {
+        date: '2019-03-15',
+        inputs: [
+            {
+                description: 'Numero palline rosse',
+                type: 'number'
+            },
+            {
+                description: 'Numero palline nere',
+                type: 'number'
+            },
+            {
+                description: 'Sequenza rosse e nere',
+                hint: 'Ad esempio: N, R',
+                type: 'text'
+            },
+            {
+                description: 'Sequenza rosse e nere',
+                hint: 'Ad esempio: N, R, R',
+                type: 'text'
+            },
+            {
+                description: 'Tre nere o rosse?',
+                hint: 'Ad esempio: N',
+                type: 'text'
+            }
+        ],
+        solution: DiceAndBalls
+    }
+
+];

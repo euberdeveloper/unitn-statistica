@@ -1,8 +1,3 @@
-const Biglia = {
-    RED: 1000,
-    BLACK: 2000
-};
-
 class DiceAndBall {
 
     get balls() {
@@ -13,26 +8,30 @@ class DiceAndBall {
         return this._first;
     }
     set first(data) {
-        this._first = data.split(',').map(str => str.trim()).map(str => str === 'R' ? Biglia.RED : Biglia.BLACK);
+        this._first = data.split(',').map(str => str.trim()).map(str => str === 'R' ? this.Biglia.RED : this.Biglia.BLACK);
     }
 
     get second() {
         return this._second;
     }
     set second(data) {
-        this._second = data.split(',').map(str => str.trim()).map(str => str === 'R' ? Biglia.RED : Biglia.BLACK);
+        this._second = data.split(',').map(str => str.trim()).map(str => str === 'R' ? this.Biglia.RED : this.Biglia.BLACK);
     }
 
     get third() {
         return this._third;
     }
     set third(data) {
-        this._third = data === 'R' ? Biglia.RED : Biglia.BLACK;
+        this._third = data === 'R' ? this.Biglia.RED : this.Biglia.BLACK;
     }
 
     constructor(reds, blacks, first, second, third) {
-        this.reds = reds;
-        this.blacks = blacks;
+        this.Biglia = {
+            RED: 1000,
+            BLACK: 2000
+        }
+        this.reds = +reds;
+        this.blacks = +blacks;
         this.first = first;
         this.second = second;
         this.third = third;
@@ -44,7 +43,7 @@ class DiceAndBall {
 
     _pick() {
         const n = Math.floor(Math.random() * this.balls) + 1; 
-        return (n <= this.reds) ? Biglia.RED : Biglia.BLACK;
+        return (n <= this.reds) ? this.Biglia.RED : this.Biglia.BLACK;
     }
 
     _solveFirst() {
@@ -74,22 +73,33 @@ class DiceAndBall {
         }
     }
 
-    test(times) {
-        let first = 0, second = 0, third = 0;
-        for(let i = 0; i < times; i++) {
+    async _test(times, current, values, callback) {
+        const gap = 1e5;
+
+        let [ first, second, third ] = values;
+        for(let i = current; i < times && i - current < gap; i++) {
             if(this._solveFirst()) first++;
             if(this._solveSecond()) second++;
             if(this._solveThird()) third++;
         }
-        return [ first / times, second / times, third / times ];
+        if(current + gap === times) {
+            return [ first / times, second / times, third / times ];
+        }
+        else {
+            return await new Promise((resolve, reject) => {
+                callback(current + gap);
+                setTimeout(async () => { resolve(await this._test(times, current + gap, [ first, second, third ], callback)) }, 0);
+            });
+        }
+    }
+
+    async test(times, callback) {
+        return await this._test(times, 0, [ 0, 0, 0 ], callback);
     }
 }
 
-const TIMES = 100000000;
+module.exports = DiceAndBall;
 
+/*const TIMES = 1e6;
 const ex = new DiceAndBall(7, 14, 'R, B', 'R, R, B', 'B');
-const result = ex.test(TIMES);
-
-console.log('PRIMO: ', result[0]);
-console.log('SECONDO: ', result[1]);
-console.log('TERZO: ', result[2]);
+ex.test(TIMES, n => console.log(n)).then(r => console.log(r));*/
