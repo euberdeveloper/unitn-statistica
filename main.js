@@ -1,3 +1,8 @@
+require('zone.js/dist/zone-node');
+require('reflect-metadata');
+
+const { enableProdMode } = require('@angular/core');
+
 const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -8,13 +13,34 @@ const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 8000;
+const DIST_FOLDER = path.join(process.cwd(), 'frontend');
 const AUTH = {
     user: 'lagrange',
     password: 'lagragna'
 };
 
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./frontend/server/main');
+const { ngExpressEngine } = require('@nguniversal/express-engine');
+const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
+
 const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
+
+app.engine('html', ngExpressEngine({
+    bootstrap: AppServerModuleNgFactory,
+    providers: [
+      provideModuleMap(LAZY_MODULE_MAP)
+    ]
+  }));
+  
+app.set('view engine', 'html');
+app.set('views', path.join(DIST_FOLDER, 'browser'));
+
+app.get('*.*', express.static(path.join(DIST_FOLDER, 'browser')));
+
+app.get('*', (req, res) => {
+  res.render('index', { req });
+});
 
 app.use(cors());
 app.use(helmet());
@@ -23,8 +49,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-
-app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.post('/provide-exercise', (req, res) => {
     const { user, password, date } = req.body;

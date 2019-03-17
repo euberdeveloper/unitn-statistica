@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Input } from 'src/app/exercise/exercise.service';
+import { Input } from '../exercise/exercise.service';
 
 export interface ProvideExerciseBody {
   user: string;

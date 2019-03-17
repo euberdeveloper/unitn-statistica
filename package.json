@@ -20,10 +20,30 @@
   },
   "homepage": "https://github.com/euberdeveloper/unitn-statistica#readme",
   "dependencies": {
+    "@angular/animations": "^7.2.9",
+    "@angular/cdk": "^7.3.4",
+    "@angular/common": "^7.2.9",
+    "@angular/compiler": "^7.2.9",
+    "@angular/core": "^7.2.9",
+    "@angular/flex-layout": "^7.0.0-beta.23",
+    "@angular/forms": "^7.2.9",
+    "@angular/http": "^7.2.9",
+    "@angular/material": "^7.3.4",
+    "@angular/material-moment-adapter": "^7.3.4",
+    "@angular/platform-browser": "^7.2.9",
+    "@angular/platform-browser-dynamic": "^7.2.9",
+    "@angular/platform-server": "^7.2.9",
+    "@angular/router": "^7.2.9",
+    "@nguniversal/express-engine": "^7.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
-    "morgan": "^1.9.1"
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0",
+    "zone.js": "^0.8.29"
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { DeserializeService } from 'src/app/deserialize/deserialize.service';
-import { ProvideExerciseResponse } from 'src/app/http/http.service';
+import { DeserializeService } from '../deserialize/deserialize.service';
+import { ProvideExerciseResponse } from '../http/http.service';
 
 export interface Input {
   description: string;

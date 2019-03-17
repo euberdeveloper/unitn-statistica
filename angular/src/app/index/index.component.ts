@@ -3,9 +3,9 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Moment } from 'moment';
 
-import { HttpService } from 'src/app/http/http.service';
-import { ExerciseService } from 'src/app/exercise/exercise.service';
-import { AlertService, SnackType } from 'src/app/alert/alert.service';
+import { HttpService } from '../http/http.service';
+import { ExerciseService } from '../exercise/exercise.service';
+import { AlertService, SnackType } from '../alert/alert.service';
 
 @Component({
   selector: 'app-index',

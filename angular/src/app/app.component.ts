@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { Subscription } from 'rxjs';
 
-import { AlertService, SnackType, SnackMessage } from 'src/app/alert/alert.service';
+import { AlertService, SnackType, SnackMessage } from './alert/alert.service';
 
 @Component({
   selector: 'app-root',

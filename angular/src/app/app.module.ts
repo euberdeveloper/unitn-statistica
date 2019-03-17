@@ -28,7 +28,7 @@ import { GetSolutionSolutionComponent } from './get-solution/get-solution-soluti
     GetSolutionSolutionComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'unitn-statistica' }),
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ExerciseService, Exercise, Input as ExerciseInput } from 'src/app/exercise/exercise.service';
+import { ExerciseService, Exercise, Input as ExerciseInput } from '../exercise/exercise.service';
 
 @Component({
   selector: 'app-get-solution',

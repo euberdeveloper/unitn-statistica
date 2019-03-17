@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
-import { Input as ExerciseInput } from 'src/app/exercise/exercise.service';
+import { Input as ExerciseInput } from '../../exercise/exercise.service';
 
 @Component({
   selector: 'app-get-solution-form',
@@ -28,7 +28,7 @@ export class GetSolutionFormComponent {
 
   constructor(private fb: FormBuilder) { }
 
-  getFormControl(index: number): FormControl {
+  getFormControl(index: number | string): FormControl {
     return this.form.get(index.toString()) as FormControl;
   }
 
