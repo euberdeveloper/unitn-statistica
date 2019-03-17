@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
-import { ExerciseService, Exercise, Input } from 'src/app/exercise/exercise.service';
+import { ExerciseService, Exercise, Input as ExerciseInput } from 'src/app/exercise/exercise.service';
 
 @Component({
   selector: 'app-get-solution',
@@ -11,41 +10,44 @@ import { ExerciseService, Exercise, Input } from 'src/app/exercise/exercise.serv
 export class GetSolutionComponent implements OnInit {
 
   private exercise: Exercise;
-  inputs: Input[] = null;
-  date = 'Nessun esercizio';
-  form: FormGroup;
 
-  progress = 0;
+  notFound = true;
+
+  form = false;
+  inputs: ExerciseInput[] = null;
+  date: string;
+
   loading = false;
+  progress = 0;
+
   solution = null;
 
   constructor(
-    private fb: FormBuilder,
     private ex: ExerciseService
   ) { }
 
   ngOnInit() {
     this.exercise = this.ex.getExercise();
     if(this.exercise) {
+      this.notFound = false;
+      this.form = true;
       this.date =this.exercise.date;
       this.inputs = this.exercise.inputs;
-      this.form = this.fb.group({ ...this.inputs.map(_input => [ null, Validators.required ]), times: [ null, Validators.required ] });
     }
   }
 
-  getFormControl(index: number): FormControl {
-    return this.form.get(index.toString()) as FormControl;
-  }
-
-  getSolution(): void {
-    if(this.form.valid) {
-      const { times, ...inputs } = this.form.value;
-      const solver = new this.exercise.solution(...Object.values(inputs));
-      this.loading = true;
-      solver.test(times, (progress: number) => {
-        this.progress = progress;
-      }).then(solution => this.solution = solution);
-    }
+  getSolution(inputs: string[], times: number): void {
+    this.form = false;
+    this.loading = true;
+    const solver = new this.exercise.solution(...inputs);
+    solver
+      .test(times, (progress: number) => {
+        this.progress = (progress / times) * 100;
+      })
+      .then((solution: number[]) => {
+        this.loading = false;
+        this.solution = solution;
+      });
   }
 
 }

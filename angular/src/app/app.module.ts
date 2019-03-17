@@ -14,14 +14,16 @@ import { IndexComponent } from './index/index.component';
 
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { GetSolutionComponent } from './get-solution/get-solution.component';
-import { GetSolutionFormComponent } from './get-solution-form/get-solution-form.component';
+import { GetSolutionFormComponent } from './get-solution/get-solution-form/get-solution-form.component';
+import { GetSolutionProgressComponent } from './get-solution/get-solution-progress/get-solution-progress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     GetSolutionComponent,
-    GetSolutionFormComponent
+    GetSolutionFormComponent,
+    GetSolutionProgressComponent,
   ],
   imports: [
     BrowserModule,
