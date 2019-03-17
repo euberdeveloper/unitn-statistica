@@ -987,7 +987,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var serverDomain = 'http://localhost:8000';
+var serverDomain = 'https://unitn-statistica.herokuapp.com';
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
         'Content-Type': 'application/json'
