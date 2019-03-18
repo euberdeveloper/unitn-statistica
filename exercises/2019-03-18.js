@@ -1,4 +1,4 @@
-class DiceAndBall {
+class ComitatoMeccanica {
 
     get balls() {
         return this.reds + this.blacks;
@@ -8,7 +8,7 @@ class DiceAndBall {
         return this._first;
     }
     set first(data) {
-        this._first = data.split(',').map(str => str.trim()).map(str => str === 'R' ? this.Biglia.RED : this.Biglia.BLACK);
+        this._first = data.split(',').map(str => str.trim()).map(str => +str);
     }
 
     get second() {
@@ -25,29 +25,17 @@ class DiceAndBall {
         this._third = data === 'R' ? this.Biglia.RED : this.Biglia.BLACK;
     }
 
-    constructor(reds, blacks, first, second, third) {
-        this.Biglia = {
-            RED: 1000,
-            BLACK: 2000
-        }
-        this.reds = +reds;
-        this.blacks = +blacks;
+    constructor(posti, matematici, fisici, first, second, third) {
+        this.posti = +posti;
+        this.matematici = +matematici;
+        this.fisici = +fisici;
         this.first = first;
         this.second = second;
         this.third = third;
     }
 
-    _tossDice() {
-        return Math.floor(Math.random() * 4) + 1;
-    }
-
-    _pick() {
-        const n = Math.floor(Math.random() * this.balls) + 1; 
-        return (n <= this.reds) ? this.Biglia.RED : this.Biglia.BLACK;
-    }
 
     _solveFirst() {
-        const times = this._tossDice();
         return times === 2 ? (this._pick() === this.first[0] && this._pick() === this.first[1]) : false;
     }
 
@@ -78,12 +66,11 @@ class DiceAndBall {
 
         let [ first, second, third ] = values;
         for(let i = current; i < times && i - current < gap; i++) {
-            if(this._solveFirst()) first++;
             if(this._solveSecond()) second++;
             if(this._solveThird()) third++;
         }
-        if(current + gap >= times) {
-            return [ first / times, second / times, third / times ];
+        if(current + gap === times) {
+            return [ first, second / times, third / times ];
         }
         else {
             return await new Promise((resolve, reject) => {
@@ -94,11 +81,11 @@ class DiceAndBall {
     }
 
     async test(times, callback) {
-        return await this._test(times, 0, [ 0, 0, 0 ], callback);
+        return await this._test(times, 0, [ this._solveFirst(), 0, 0 ], callback);
     }
 }
 
-module.exports = DiceAndBall;
+module.exports = ComitatoMeccanica;
 
 /*const TIMES = 1e6;
 const ex = new DiceAndBall(7, 14, 'R, B', 'R, R, B', 'B');

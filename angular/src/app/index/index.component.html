@@ -1,6 +1,6 @@
 <div id="content" fxFlexFill fxLayoutAlign="center center">
 
-  <mat-card fxFlex="30">
+  <mat-card id="card" fxFlex="30" fxFlex.sm="50" fxFlex.xs="90">
 
     <mat-card-header fxLayoutAlign="center center">
       <mat-card-title id="title">
@@ -21,8 +21,7 @@
           <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="password"
             required/>
           <mat-error *ngIf="password.hasError('required')">Password is <strong>required</strong></mat-error>
-          <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility'
-            }}</mat-icon>
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
         </mat-form-field>
 
         <mat-form-field fxFlexAlign="stretch">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 import { ExerciseService, Exercise, Input as ExerciseInput } from '../exercise/exercise.service';
 
@@ -23,6 +23,7 @@ export class GetSolutionComponent implements OnInit {
   solution = null;
 
   constructor(
+    private zone: NgZone,
     private ex: ExerciseService
   ) { }
 
@@ -42,7 +43,7 @@ export class GetSolutionComponent implements OnInit {
     const solver = new this.exercise.solution(...inputs);
     solver
       .test(times, (progress: number) => {
-        this.progress = (progress / times) * 100;
+        this.zone.run( () => { this.progress = (progress / times) * 100 } );
       })
       .then((solution: number[]) => {
         this.loading = false;
