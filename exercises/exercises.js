@@ -96,7 +96,7 @@ module.exports = [
                 type: 'text'
             }
         ],
-        solution: DiceAndBalls
+        solution: ComitatoMeccanica
     }
 
 ];
