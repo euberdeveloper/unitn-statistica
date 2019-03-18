@@ -5,6 +5,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AdsenseModule } from 'ng2-adsense';
 
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,7 @@ import { GetSolutionComponent } from './get-solution/get-solution.component';
 import { GetSolutionFormComponent } from './get-solution/get-solution-form/get-solution-form.component';
 import { GetSolutionProgressComponent } from './get-solution/get-solution-progress/get-solution-progress.component';
 import { GetSolutionSolutionComponent } from './get-solution/get-solution-solution/get-solution-solution.component';
+import { GetSolutionAdsenseComponent } from './get-solution/get-solution-adsense/get-solution-adsense.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { GetSolutionSolutionComponent } from './get-solution/get-solution-soluti
     GetSolutionFormComponent,
     GetSolutionProgressComponent,
     GetSolutionSolutionComponent,
+    GetSolutionAdsenseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'unitn-statistica' }),
@@ -33,6 +36,10 @@ import { GetSolutionSolutionComponent } from './get-solution/get-solution-soluti
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-8122958180407711',
+      adSlot: 7259870550,
+    }),
     MaterialModule,
     AppRoutingModule
   ],

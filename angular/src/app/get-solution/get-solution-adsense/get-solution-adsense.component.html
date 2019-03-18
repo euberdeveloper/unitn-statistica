@@ -1,0 +1,19 @@
+<mat-card>
+
+  <mat-card-header fxLayoutAlign="center center">
+    <mat-card-title id="title">
+      <span>Wait {{ time }} seconds...</span>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content id="body" fxLayout="row" fxLayoutAlign="center center">
+
+    <ng-adsense fxFlexFill></ng-adsense>
+
+  </mat-card-content>
+
+  <mat-card-actions id="buttons" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" [disabled]="time !== 0" (click)="showSolution()">SHOW SOLUTION</button>
+  </mat-card-actions>
+
+</mat-card>

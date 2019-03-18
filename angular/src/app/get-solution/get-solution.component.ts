@@ -20,6 +20,9 @@ export class GetSolutionComponent implements OnInit {
   loading = false;
   progress = 0;
 
+  adsense = false;
+
+  canShowSolution = false;
   solution = null;
 
   constructor(
@@ -47,8 +50,14 @@ export class GetSolutionComponent implements OnInit {
       })
       .then((solution: number[]) => {
         this.loading = false;
+        this.adsense = true;
         this.solution = solution;
       });
+  }
+
+  showSolution(): void {
+    this.adsense = false;
+    this.canShowSolution = true;
   }
 
 }
