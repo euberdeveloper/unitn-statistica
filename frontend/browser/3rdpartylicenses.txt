@@ -411,6 +411,8 @@ MIT
 
 @angular/material/snack-bar
 
+@angular/material/tooltip
+
 @angular/router
 MIT
 

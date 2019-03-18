@@ -12,8 +12,9 @@
 
       <mat-form-field *ngFor="let input of inputs; let i = index;" fxFlexAlign="stretch">
         <input matInput [type]="input.type" [placeholder]="input.description" [formControlName]="i" required/>
-        <mat-error *ngIf="getFormControl(i).hasError('required')">This input is <strong>required</strong></mat-error>
+        <mat-error *ngIf="getFormControl(i).hasError('required')" [matTooltip]="input.hint">This input is <strong>required</strong></mat-error>
         <mat-hint>{{ input.hint }}</mat-hint>
+        <mat-icon matSuffix color="primary" [matTooltip]="input.description">info</mat-icon>
       </mat-form-field>
 
       <mat-form-field fxFlexAlign="stretch">

@@ -16,7 +16,8 @@ import {
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { TextFieldModule } from '@angular/cdk/text-field';
@@ -41,6 +42,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatProgressSpinnerModule,
     MatTableModule,
     MatToolbarModule,
+    MatTooltipModule,
     TextFieldModule
   ],
   exports: [
@@ -62,6 +64,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatProgressSpinnerModule,
     MatTableModule,
     MatToolbarModule,
+    MatTooltipModule,
     TextFieldModule
   ]
 })
