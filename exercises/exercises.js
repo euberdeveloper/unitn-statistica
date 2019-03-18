@@ -1,5 +1,6 @@
 const FornitoriEMeteo = require('./2019-03-14');
 const DiceAndBalls = require('./2019-03-15');
+const ComitatoMeccanica = require('./2019-03-18');
 
 module.exports = [
     
@@ -59,6 +60,39 @@ module.exports = [
             {
                 description: 'Tre nere o rosse?',
                 hint: 'Ad esempio: N',
+                type: 'text'
+            }
+        ],
+        solution: DiceAndBalls
+    },
+
+    {
+        date: '2019-03-18',
+        inputs: [
+            {
+                description: 'Numero persone del comitato/gruppo',
+                type: 'number'
+            },
+            {
+                description: 'Numero matematici/ragazzi',
+                type: 'number'
+            },
+            {
+                description: 'Numero fisici/ragazze',
+                type: 'number'
+            },
+            {
+                description: 'Esercizio 1: numero matematici/ragazzi',
+                type: 'number'
+            },
+            {
+                description: 'Esercizio 2: numero matematici/ragazzi',
+                hint: 'Se ti è richiesto il numero di gruppi possibili, digita 0',
+                type: 'number'
+            },
+            {
+                description: 'Esercizio 3: Sono di più i maschi/matematici o le femmine/fisici? Possono essere uguali?',
+                hint: 'Es: TRUE, M oppure FALSE, F oppure FALSE, M oppure TRUE, F',
                 type: 'text'
             }
         ],
