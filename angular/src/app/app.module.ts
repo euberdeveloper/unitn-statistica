@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdsenseModule } from 'ng2-adsense';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -41,7 +44,8 @@ import { GetSolutionAdsenseComponent } from './get-solution/get-solution-adsense
       adSlot: 7259870550,
     }),
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'it-IT' },
