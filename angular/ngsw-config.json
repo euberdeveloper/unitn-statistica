@@ -1,5 +1,5 @@
 {
-  "index": "/",
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -8,6 +8,7 @@
         "files": [
           "/favicon.ico",
           "/index.html",
+          "/*.html",
           "/*.css",
           "/*.js"
         ]
@@ -20,7 +21,24 @@
         "files": [
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
+          "https://fonts.googleapis.com/icon?family=Material+Icons",
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["/index", "/get-solution", "/*"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 15,
+        "maxAge": "1h",
+        "timeout": "5s"
       }
     }
   ]
