@@ -3,7 +3,9 @@
 }
 
 #progress {
-    font-size: 25px; 
     position: absolute; 
-    top: 44%; left: 40%;
+}
+
+#progress span {
+    font-size: 25px; 
 }

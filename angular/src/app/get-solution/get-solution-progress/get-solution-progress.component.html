@@ -3,10 +3,10 @@
   <mat-card-content id="body" fxLayout="row" fxLayoutAlign="center center">
 
     <div fxFlexFill fxLayoutAlign="center center">
-      <div>
-          <mat-progress-spinner color="primary" mode="determinate" diameter="180" [value]="progress"></mat-progress-spinner>
-          <span id="progress">{{ progress.toFixed(2) }}%</span>
-      </div>
+      <mat-progress-spinner color="primary" mode="determinate" diameter="180" [value]="progress"></mat-progress-spinner>
+    </div>
+    <div id="progress" fxFlexFill fxLayoutAlign="center center">
+      <span>{{ progress.toFixed(2) }}%</span>
     </div>
 
   </mat-card-content>

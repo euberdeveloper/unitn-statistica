@@ -1,6 +1,7 @@
 const FornitoriEMeteo = require('./2019-03-14');
 const DiceAndBalls = require('./2019-03-15');
 const ComitatoMeccanica = require('./2019-03-18');
+const DueScatole = require('./2019-03-19');
 
 module.exports = [
     
@@ -97,6 +98,39 @@ module.exports = [
             }
         ],
         solution: ComitatoMeccanica
+    },
+
+    {
+        date: '2019-03-19',
+        inputs: [
+            {
+                description: 'Numero palline bianche in A',
+                type: 'number'
+            },
+            {
+                description: 'Numero palline nere in A',
+                type: 'number'
+            },
+            {
+                description: 'Numero palline bianche in B',
+                type: 'number'
+            },
+            {
+                description: 'Numero palline nere in B',
+                type: 'number'
+            },
+            {
+                description: 'Es. 1: colore richiesto?',
+                hint: 'B per bianco e N per nero',
+                type: 'text'
+            },
+            {
+                description: 'Es. 2: Secondo colore? Primo colore?',
+                hint: 'Es: B, N oppure B, B oppure N, N, oppure N, B',
+                type: 'text'
+            }
+        ],
+        solution: DueScatole
     }
 
 ];

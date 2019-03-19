@@ -99,7 +99,3 @@ class DiceAndBall {
 }
 
 module.exports = DiceAndBall;
-
-/*const TIMES = 1e6;
-const ex = new DiceAndBall(7, 14, 'R, B', 'R, R, B', 'B');
-ex.test(TIMES, n => console.log(n)).then(r => console.log(r));*/
