@@ -1,4 +1,4 @@
-<div id="content" fxFlexFill fxLayoutAlign="center center">
+<div id="content_solution" fxFlexFill fxLayoutAlign="center center">
 
   <h2 *ngIf="notFound">ESERCIZIO NON TROVATO</h2>
   <app-get-solution-form *ngIf="form" [inputs]="inputs" [date]="date" (getSolution)="getSolution($event.inputs, $event.times)" fxFlex="60" fxFlex.sm="80" fxFlex.xs="90"></app-get-solution-form>
