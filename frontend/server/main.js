@@ -1847,7 +1847,7 @@ var rxjs_1 = __webpack_require__(/*! rxjs */ "rxjs");
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
 var i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var i1 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
-var serverDomain = 'http://localhost:8000'; //'https://unitn-statistica.herokuapp.com';
+var serverDomain = 'https://unitn-statistica.herokuapp.com';
 var httpOptions = {
     headers: new http_1.HttpHeaders({
         'Content-Type': 'application/json'

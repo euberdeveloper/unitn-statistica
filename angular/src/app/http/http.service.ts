@@ -17,7 +17,7 @@ export interface ProvideExerciseResponse {
   solution: string;
 }
 
-const serverDomain = 'http://localhost:8000'//'https://unitn-statistica.herokuapp.com';
+const serverDomain = 'https://unitn-statistica.herokuapp.com';
 
 const httpOptions = {
   headers: new HttpHeaders({
