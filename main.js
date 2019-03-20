@@ -49,7 +49,7 @@ if(process.env.NODE_ENV === 'production') {
     app.use();
 }
 
-app.use(redirect);
+//app.use(redirect);
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
