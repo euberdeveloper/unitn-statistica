@@ -29,6 +29,10 @@ const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
 const redirect = require('./utilities/redirect');
 
+if(process.env.NODE_ENV === 'production') {
+    app.use(redirect);
+}
+
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
     providers: [
@@ -44,11 +48,6 @@ app.get('*.*', express.static(path.join(DIST_FOLDER, 'browser')));
 app.get('*', (req, res) => {
   res.render('index', { req });
 });
-
-if(process.env.NODE_ENV === 'production') {
-    console.log('REDIRECT')
-    app.use(redirect);
-}
 
 app.use(cors());
 app.use(helmet());
