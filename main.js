@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
+enableProdMode();
+
 const PORT = process.env.PORT || 8000;
 const DIST_FOLDER = path.join(process.cwd(), 'frontend');
 const AUTH = {
@@ -25,6 +27,7 @@ const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader')
 
 const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
+const redirect = require('./utilities/redirect');
 
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
@@ -42,15 +45,20 @@ app.get('*', (req, res) => {
   res.render('index', { req });
 });
 
+if(process.env.NODE_ENV === 'production') {
+    app.use();
+}
+
+app.use(redirect);
 app.use(cors());
 app.use(helmet());
-app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(morgan('dev'));
 
-app.post('/provide-exercise', (req, res) => {
+app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date } = req.body;
     if(user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);

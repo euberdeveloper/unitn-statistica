@@ -8,12 +8,12 @@
         "files": [
           "/favicon.ico",
           "/index.html",
-          "/*.html",
           "/*.css",
           "/*.js"
         ]
       }
-    }, {
+    }, 
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
@@ -24,21 +24,8 @@
         ],
         "urls": [
           "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
-          "https://fonts.googleapis.com/icon?family=Material+Icons",
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
         ]
-      }
-    }
-  ],
-  "dataGroups": [
-    {
-      "name": "api",
-      "urls": ["/index", "/get-solution", "/*"],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 15,
-        "maxAge": "1h",
-        "timeout": "5s"
       }
     }
   ]

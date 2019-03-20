@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.post('/provide-exercise', (req, res) => {
+app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date } = req.body;
     if(user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);
