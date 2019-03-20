@@ -4,6 +4,7 @@ require('reflect-metadata');
 const { enableProdMode } = require('@angular/core');
 
 const path = require('path');
+const compression = require('compression')
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -29,6 +30,7 @@ const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
 const redirect = require('./utilities/redirect');
 
+app.use(compression());
 if(process.env.NODE_ENV === 'production') {
     app.use(redirect);
 }
