@@ -2,6 +2,7 @@ const FornitoriEMeteo = require('./2019-03-14');
 const DiceAndBalls = require('./2019-03-15');
 const ComitatoMeccanica = require('./2019-03-18');
 const DueScatole = require('./2019-03-19');
+const Bandiere = require('./2019-03-20');
 
 module.exports = [
     
@@ -131,6 +132,17 @@ module.exports = [
             }
         ],
         solution: DueScatole
+    },
+
+    {
+        date: '2019-03-20',
+        inputs: [
+            {
+                description: 'Numero colori possibili',
+                type: 'number'
+            }
+        ],
+        solution: Bandiere
     }
 
 ];
