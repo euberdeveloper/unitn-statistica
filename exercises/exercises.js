@@ -3,6 +3,8 @@ const DiceAndBalls = require('./2019-03-15');
 const ComitatoMeccanica = require('./2019-03-18');
 const DueScatole = require('./2019-03-19');
 const Bandiere = require('./2019-03-20');
+const DiceGame = require('./2019-03-22');
+
 
 module.exports = [
     
@@ -143,6 +145,25 @@ module.exports = [
             }
         ],
         solution: Bandiere
+    },
+
+    {
+        date: '2019-03-21',
+        inputs: [
+            {
+                description: 'Numero lanci di A',
+                type: 'number'
+            },
+            {
+                description: 'Numero lanci di B',
+                type: 'number'
+            },
+            {
+                description: 'Numero faccia che ferma il gioco',
+                type: 'number'
+            }
+        ],
+        solution: DiceGame
     }
 
 ];
