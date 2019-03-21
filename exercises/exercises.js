@@ -3,7 +3,7 @@ const DiceAndBalls = require('./2019-03-15');
 const ComitatoMeccanica = require('./2019-03-18');
 const DueScatole = require('./2019-03-19');
 const Bandiere = require('./2019-03-20');
-const DiceGame = require('./2019-03-22');
+const DiceGame = require('./2019-03-21');
 
 
 module.exports = [
