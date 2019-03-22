@@ -4,6 +4,7 @@ const ComitatoMeccanica = require('./2019-03-18');
 const DueScatole = require('./2019-03-19');
 const Bandiere = require('./2019-03-20');
 const DiceGame = require('./2019-03-21');
+const Sottoinsiemi = require('./2019-03-22');
 
 
 module.exports = [
@@ -164,6 +165,21 @@ module.exports = [
             }
         ],
         solution: DiceGame
+    },
+
+    {
+        date: '2019-03-22',
+        inputs: [
+            {
+                description: 'L\'insieme va da 1 a che numero?',
+                type: 'number'
+            },
+            {
+                description: 'Numero elementi gruppi da formare?',
+                type: 'number'
+            }
+        ],
+        solution: Sottoinsiemi
     }
 
 ];
