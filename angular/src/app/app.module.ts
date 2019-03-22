@@ -5,7 +5,6 @@ import { HttpClientModule }    from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AdsenseModule } from 'ng2-adsense';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -21,7 +20,6 @@ import { GetSolutionComponent } from './get-solution/get-solution.component';
 import { GetSolutionFormComponent } from './get-solution/get-solution-form/get-solution-form.component';
 import { GetSolutionProgressComponent } from './get-solution/get-solution-progress/get-solution-progress.component';
 import { GetSolutionSolutionComponent } from './get-solution/get-solution-solution/get-solution-solution.component';
-import { GetSolutionAdsenseComponent } from './get-solution/get-solution-adsense/get-solution-adsense.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +28,7 @@ import { GetSolutionAdsenseComponent } from './get-solution/get-solution-adsense
     GetSolutionComponent,
     GetSolutionFormComponent,
     GetSolutionProgressComponent,
-    GetSolutionSolutionComponent,
-    GetSolutionAdsenseComponent
+    GetSolutionSolutionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'unitn-statistica' }),
@@ -39,10 +36,6 @@ import { GetSolutionAdsenseComponent } from './get-solution/get-solution-adsense
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    AdsenseModule.forRoot({
-      adClient: 'ca-pub-8122958180407711',
-      adSlot: 7259870550,
-    }),
     MaterialModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

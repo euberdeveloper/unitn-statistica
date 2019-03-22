@@ -3,7 +3,6 @@
   <h2 *ngIf="notFound">ESERCIZIO NON TROVATO</h2>
   <app-get-solution-form *ngIf="form" [inputs]="inputs" [date]="date" (getSolution)="getSolution($event.inputs, $event.times)" fxFlex="60" fxFlex.sm="80" fxFlex.xs="90"></app-get-solution-form>
   <app-get-solution-progress *ngIf="loading" [progress]="progress" fxFlex="40" fxFlex.sm="60" fxFlex.xs="70"></app-get-solution-progress>
-  <app-get-solution-adsense *ngIf="adsense" fxFlex="80" (showSolution)="showSolution()"></app-get-solution-adsense>
   <app-get-solution-solution *ngIf="canShowSolution" [solutions]="solution" fxFlex="40" fxFlex.sm="60" fxFlex.xs="70"></app-get-solution-solution>
 
 </div>
