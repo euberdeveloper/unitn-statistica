@@ -200,7 +200,7 @@ module.exports = [
                 type: 'number'
             }
         ],
-        solution: Sottoinsiemi
+        solution: Gatti
     }
 
 ];
