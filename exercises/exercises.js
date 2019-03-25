@@ -5,6 +5,7 @@ const DueScatole = require('./2019-03-19');
 const Bandiere = require('./2019-03-20');
 const DiceGame = require('./2019-03-21');
 const Sottoinsiemi = require('./2019-03-22');
+const Gatti = require('./2019-03-25');
 
 
 module.exports = [
@@ -176,6 +177,26 @@ module.exports = [
             },
             {
                 description: 'Numero elementi gruppi da formare?',
+                type: 'number'
+            }
+        ],
+        solution: Sottoinsiemi
+    },
+
+    {
+        date: '2019-03-25',
+        inputs: [
+            {
+                description: 'Percentuale gatti/prodotti infetti?',
+                type: 'number'
+            },
+            {
+                description: 'Percentuale test positivi su gatti/prodotti infetti?',
+                hint: 'Scrivere 100 se non si ha quella sui gatti',
+                type: 'number'
+            },
+            {
+                description: 'Percentuale test positivi su gatti/prodotti sani?',
                 type: 'number'
             }
         ],
