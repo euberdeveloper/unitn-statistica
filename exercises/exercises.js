@@ -6,7 +6,7 @@ const Bandiere = require('./2019-03-20');
 const DiceGame = require('./2019-03-21');
 const Sottoinsiemi = require('./2019-03-22');
 const Gatti = require('./2019-03-25');
-
+const Messaggi = require('./2019-03-26');
 
 module.exports = [
     
@@ -201,6 +201,40 @@ module.exports = [
             }
         ],
         solution: Gatti
+    },
+
+    {
+        date: '2019-03-26',
+        inputs: [
+            {
+                description: 'Probabilità tutte A in percentuale',
+                type: 'number'
+            },
+            {
+                description: 'Probabilità tutte B in percentuale',
+                type: 'number'
+            },
+            {
+                description: 'Probabilità lettera non distorta in percentuale',
+                hint: 'Non distorta vuol dire che arriva invariata',
+                type: 'number'
+            },
+            {
+                description: 'Messaggio che arriva, lettere separate da virgola?',
+                hint: 'Ad esempio: A, B, B, C',
+                type: 'text'
+            },
+            {
+                description: 'Lettera di cui è composto il messaggio iniziale',
+                hint: 'Ad esempio: B',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: numero caratteri sequenza',
+                type: 'number'
+            }
+        ],
+        solution: Messaggi
     }
 
 ];
