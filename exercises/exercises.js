@@ -7,6 +7,7 @@ const DiceGame = require('./2019-03-21');
 const Sottoinsiemi = require('./2019-03-22');
 const Gatti = require('./2019-03-25');
 const Messaggi = require('./2019-03-26');
+const FunzioneProb = require('./2019-03-27');
 
 module.exports = [
     
@@ -235,6 +236,37 @@ module.exports = [
             }
         ],
         solution: Messaggi
+    },
+
+    {
+        date: '2019-03-27',
+        inputs: [
+            {
+                description: 'Valore di lambda',
+                type: 'number'
+            },
+            {
+                description: 'Primo esercizio, intervallo',
+                hint: 'Ad esempio: 0.105, 0.388',
+                type: 'text'
+            },
+            {
+                description: 'Secondo esercizio, intervallo',
+                hint: 'Ad esempio: -0.651, 0.651',
+                type: 'text'
+            },
+            {
+                description: 'Terzo esercizio, intervalli',
+                hint: 'Ad esempio: 0.441, 0.443, 1.188, 1.506',
+                type: 'text'
+            },
+            {
+                description: 'Quarto esercizio, intervalli',
+                hint: 'Ad esempio: 0.441, 0.443, 1.188, 1.506, 0.105, 0.388',
+                type: 'text'
+            }
+        ],
+        solution: FunzioneProb
     }
 
 ];
