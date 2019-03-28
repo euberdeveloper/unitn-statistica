@@ -20,6 +20,7 @@ import { GetSolutionComponent } from './get-solution/get-solution.component';
 import { GetSolutionFormComponent } from './get-solution/get-solution-form/get-solution-form.component';
 import { GetSolutionProgressComponent } from './get-solution/get-solution-progress/get-solution-progress.component';
 import { GetSolutionSolutionComponent } from './get-solution/get-solution-solution/get-solution-solution.component';
+import { GetSolutionToggleComponent } from './get-solution/get-solution-form/get-solution-toggle/get-solution-toggle.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GetSolutionSolutionComponent } from './get-solution/get-solution-soluti
     GetSolutionComponent,
     GetSolutionFormComponent,
     GetSolutionProgressComponent,
-    GetSolutionSolutionComponent
+    GetSolutionSolutionComponent,
+    GetSolutionToggleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'unitn-statistica' }),

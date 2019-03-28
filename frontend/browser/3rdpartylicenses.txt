@@ -447,6 +447,8 @@ THE SOFTWARE.
 
 @angular/material/icon
 
+@angular/material/slide-toggle
+
 @angular/material/progress-spinner
 
 @angular/material/toolbar

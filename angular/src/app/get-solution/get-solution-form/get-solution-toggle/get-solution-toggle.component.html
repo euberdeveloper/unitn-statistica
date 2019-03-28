@@ -1,0 +1,15 @@
+<div fxFlexFill fxLayout="row" fxLayoutAlign="center center" id="toggle_conteiner">
+
+  <mat-form-field id="toggle_text" (click)="toggle.toggle()" fxFlex>
+    <input matInput type="text" [placeholder]="input.description" disabled/>
+    <mat-error *ngIf="control.hasError('required')">
+      <span [matTooltip]="input.hint">This input is <strong>required</strong></span>
+    </mat-error>
+    <mat-hint>
+      <span [matTooltip]="input.hint">{{ input.hint }}</span>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-slide-toggle color="primary" [formControl]="control" #toggle required></mat-slide-toggle>
+
+</div>

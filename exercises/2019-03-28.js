@@ -1,18 +1,26 @@
 class FunzProb {
 
     get c() {
-        return 1 / (this.end ** 2);
+        return (this.isQuad ? 1 / (this.end ** 2) : 1 / ((this.end - 1) ** 3));
+    }
+
+    _quadratic(x) {
+        return this.c * x * x;
+    }
+
+    _cubic(x) {
+        return this.c * ((x - 1) ** 3);
     }
 
     _f(x) {
-        if(x <= 0) {
+        if (x <= (this.isQuad ? 0 : 1)) {
             return 0;
         }
-        else if(x >= this.end) {
+        else if (x >= this.end) {
             return 1;
         }
         else {
-            return this.c * x * x;
+            return (this.isQuad ? this._quadratic(x) : this._cubic(x));
         }
     }
 
@@ -27,7 +35,8 @@ class FunzProb {
         this._second = interval.split(',').map(str => +str);
     }
 
-    constructor(end, second, third) {
+    constructor(isQuad, end, second, third) {
+        this.isQuad = +isQuad;
         this.end = +end;
         this.second = second;
         this.third = +third;
@@ -42,11 +51,12 @@ class FunzProb {
     }
 
     _solveThird() {
-        const res = Math.sqrt((this.third + this.c * 4) / this.c);
-        if(this._f(res) !== 1) {
+        const res = (this.isQuad ? Math.sqrt((this.third + this.c * 4) / this.c) : Math.cbrt(((this.third + this.c) / this.c) + 1));
+        console.log(res)
+        if (this._f(res) !== 1) {
             return res;
         }
-        else if(this._f(-res) !== 0) {
+        else if (this._f(-res) !== 0) {
             return -res;
         }
         else {
@@ -55,12 +65,12 @@ class FunzProb {
     }
 
     async test(times, callback) {
-        return [ this._solveFirst(), this._solveSecond(), this._solveThird() ];
+        return [this._solveFirst(), this._solveSecond(), this._solveThird()];
     }
 }
 
 module.exports = FunzProb;
 
 /*const TIMES = 1e6;
-const ex = new FunzProb(12, '-3.887, 11.614', 0.29);
+const ex = new FunzProb(false, 10, '1.788, 9.446', 0.49);
 ex.test(TIMES, n => console.log(n)).then(r => console.log(r));*/

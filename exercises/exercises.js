@@ -274,6 +274,11 @@ module.exports = [
         date: '2019-03-28',
         inputs: [
             {
+                description: 'Hai la funzione quadratica',
+                hint: 'Deselezionare se hai c * (x - 1)^3',
+                type: 'switch'
+            },
+            {
                 description: 'Da che numero la funzione assume 1?',
                 hint: 'Se l\'intervallo è [0,N], scrivere N',
                 type: 'number'

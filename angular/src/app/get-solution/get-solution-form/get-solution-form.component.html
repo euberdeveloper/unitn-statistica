@@ -10,20 +10,27 @@
 
     <form [formGroup]="form" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
 
-      <mat-form-field *ngFor="let input of inputs; let i = index;" fxFlexAlign="stretch">
-        <input matInput [type]="input.type" [placeholder]="input.description" [formControlName]="i" required/>
-        <mat-error *ngIf="getFormControl(i).hasError('required')">
-          <span [matTooltip]="input.hint">This input is <strong>required</strong></span>
-        </mat-error>
-        <mat-hint>
+      <ng-container *ngFor="let input of inputs; let i = index;">
+
+        <mat-form-field fxFlexAlign="stretch" *ngIf="input.type !== 'switch'">
+          <input matInput [type]="input.type" [placeholder]="input.description" [formControlName]="i" required />
+          <mat-error *ngIf="getFormControl(i).hasError('required')">
+            <span [matTooltip]="input.hint">This input is <strong>required</strong></span>
+          </mat-error>
+          <mat-hint>
             <span [matTooltip]="input.hint">{{ input.hint }}</span>
-        </mat-hint>
-        <mat-icon matSuffix color="primary" [matTooltip]="input.description">info</mat-icon>
-      </mat-form-field>
+          </mat-hint>
+          <mat-icon matSuffix color="primary" [matTooltip]="input.description">info</mat-icon>
+        </mat-form-field>
+
+        <app-get-solution-toggle [input]="input" [control]="getFormControl(i)" fxFlexAlign="stretch" *ngIf="input.type === 'switch'"></app-get-solution-toggle>
+
+      </ng-container>
 
       <mat-form-field fxFlexAlign="stretch">
-        <input matInput type="number" placeholder="Tests number" formControlName="times" required/>
-        <mat-error *ngIf="getFormControl('times').hasError('required')">This input is <strong>required</strong></mat-error>
+        <input matInput type="number" placeholder="Tests number" formControlName="times" required />
+        <mat-error *ngIf="getFormControl('times').hasError('required')">This input is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
 
     </form>
@@ -31,7 +38,8 @@
   </mat-card-content>
 
   <mat-card-actions id="buttons" fxLayoutAlign="center center">
-    <button *ngIf="inputs" mat-raised-button color="primary" [disabled]="form.invalid" (click)="getSolution()">GET SOLUTION</button>
+    <button *ngIf="inputs" mat-raised-button color="primary" [disabled]="form.invalid" (click)="getSolution()">GET
+      SOLUTION</button>
   </mat-card-actions>
 
 </mat-card>
