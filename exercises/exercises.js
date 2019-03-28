@@ -289,7 +289,7 @@ module.exports = [
                 type: 'text'
             }
         ],
-        solution: FunzioneProb
+        solution: FunzProb
     }
 
 ];
