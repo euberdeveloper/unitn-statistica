@@ -286,7 +286,7 @@ module.exports = [
             {
                 description: 'Terzo es: che probabilità deve dare',
                 hint: 'La domanda chiede p(]2, t]) = X. Scrivere X.',
-                type: 'text'
+                type: 'number'
             }
         ],
         solution: FunzProb
