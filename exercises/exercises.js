@@ -8,6 +8,7 @@ const Sottoinsiemi = require('./2019-03-22');
 const Gatti = require('./2019-03-25');
 const Messaggi = require('./2019-03-26');
 const FunzioneProb = require('./2019-03-27');
+const FunzProb = require('./2019-03-27');
 
 module.exports = [
     
@@ -263,6 +264,28 @@ module.exports = [
             {
                 description: 'Quarto esercizio, intervalli',
                 hint: 'Ad esempio: 0.441, 0.443, 1.188, 1.506, 0.105, 0.388',
+                type: 'text'
+            }
+        ],
+        solution: FunzioneProb
+    },
+
+    {
+        date: '2019-03-28',
+        inputs: [
+            {
+                description: 'Da che numero la funzione assume 1?',
+                hint: 'Se l\'intervallo è [0,N], scrivere N',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: -3.887, 11.614',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: che probabilità deve dare',
+                hint: 'La domanda chiede p(]2, t]) = X. Scrivere X.',
                 type: 'text'
             }
         ],
