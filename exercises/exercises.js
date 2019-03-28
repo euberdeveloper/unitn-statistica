@@ -8,7 +8,7 @@ const Sottoinsiemi = require('./2019-03-22');
 const Gatti = require('./2019-03-25');
 const Messaggi = require('./2019-03-26');
 const FunzioneProb = require('./2019-03-27');
-const FunzProb = require('./2019-03-27');
+const FunzProb = require('./2019-03-28');
 
 module.exports = [
     
