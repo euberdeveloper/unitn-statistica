@@ -51,7 +51,7 @@ class FunzProb {
     }
 
     _solveThird() {
-        const res = (this.isQuad ? Math.sqrt((this.third + this.c * 4) / this.c) : Math.cbrt(((this.third + this.c) / this.c) + 1));
+        const res = (this.isQuad ? Math.sqrt((this.third + this.c * 4) / this.c) : (Math.cbrt((this.third + this.c) / this.c) + 1));
         console.log(res)
         if (this._f(res) !== 1) {
             return res;
