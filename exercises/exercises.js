@@ -9,6 +9,7 @@ const Gatti = require('./2019-03-25');
 const Messaggi = require('./2019-03-26');
 const FunzioneProb = require('./2019-03-27');
 const FunzProb = require('./2019-03-28');
+const PesceAprile = require('./2019-04-01');
 
 module.exports = [
     
@@ -295,6 +296,38 @@ module.exports = [
             }
         ],
         solution: FunzProb
+    },
+
+    {
+        date: '2019-04-01',
+        inputs: [
+            {
+                description: 'Quanto vale lambda',
+                hint: 'La funzione deve essere 1 - e^(-lambda * x)',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: intervallo',
+                hint: 'Ad esempio: -inf, 0.293',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: 0.531, inf',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: intervalli. (numeri in fila)',
+                hint: 'Ad esempio: -inf, 0.293, 0.531, inf, 1.755',
+                type: 'text'
+            },
+            {
+                description: 'Quarto es: intervalli. (numeri in fila)',
+                hint: 'Ad esempio: -inf, 0.293, 0.531, inf, 0.157, 1.174',
+                type: 'text'
+            }
+        ],
+        solution: PesceAprile
     }
 
 ];
