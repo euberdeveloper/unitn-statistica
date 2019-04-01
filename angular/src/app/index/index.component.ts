@@ -50,7 +50,7 @@ export class IndexComponent implements OnInit {
       const year = momentDate.year();
       const month = momentDate.month();
       const day = momentDate.date();
-      const date = year + '-' + (month > 8 ? month + 1 : '0' + (month + 1)) + '-' + day;
+      const date = year + '-' + (month > 8 ? month + 1 : '0' + (month + 1)) + '-' + (day > 9 ? day : '0' + day);
       this.http.provideExercise({
         user: this.user.value,
         password: this.password.value,
