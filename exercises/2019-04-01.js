@@ -1,7 +1,15 @@
 class PesceAprile {
 
+    _firstFunction(x) {
+        return Math.pow(1 / (1 + Math.exp(-this.lambda * x)), 2);
+    }
+
+    _secondFunction(x) {
+        return Math.pow(1 / (1 + Math.exp(-this.lambda * x)), 2);
+    }
+
     _f(x) {
-        return (x >= 0) ? 1 - Math.exp(-this.lambda * x) : 0;
+        return (this.isSecond ? this._secondFunction(x) : this._firstFunction(x));
     }
 
     _interval(x, y) {
@@ -48,7 +56,8 @@ class PesceAprile {
         this._fourth = this._parseData(data);
     }
 
-    constructor(lambda, first, second, third, fourth) {
+    constructor(isSecond, lambda, first, second, third, fourth) {
+        this.isSecond = isSecond;
         this.lambda = +lambda;
         this.first = first;
         this.second = second;
@@ -86,5 +95,5 @@ class PesceAprile {
 module.exports = PesceAprile;
 
 /*const TIMES = 1e6;
-const ex = new PesceAprile(1.35, '-inf, 0.293', '0.531, inf', '-inf, 0.293, 0.531, inf, 1.755', '-inf, 0.293, 0.531, inf, 0.157, 1.174');
+const ex = new PesceAprile(true, 1.35, '-inf, 0.293', '0.531, inf', '-inf, 0.293, 0.531, inf, 1.755', '-inf, 0.293, 0.531, inf, 0.157, 1.174');
 ex.test(TIMES, n => console.log(n)).then(r => console.log(r));*/

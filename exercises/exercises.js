@@ -302,8 +302,13 @@ module.exports = [
         date: '2019-04-01',
         inputs: [
             {
+                description: 'Hai una funzione senza frazione?',
+                hint: 'Deselezionare se non hai 1 - e^(-lambda * x)',
+                type: 'switch'
+            },
+            {
                 description: 'Quanto vale lambda',
-                hint: 'La funzione deve essere 1 - e^(-lambda * x)',
+                hint: 'Esponente senza il meno di e',
                 type: 'number'
             },
             {
