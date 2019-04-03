@@ -56,7 +56,7 @@ class Ripartizione {
     _solveSecond() {
         let begin = -1, end = -1;
         for(let i = 0; i < this.tratti.length && (begin === -1 || end === -1); i++) {
-            if(this.tratti[i][1] <= this.second[0] && this.second[0] < this.tratti[i][2]) {
+            if(this.tratti[i][1] <= this.second[0] && this.second[0] <= this.tratti[i][2] && begin === -1) {
                 begin = this.tratti[i][0];
             }
             if(this.tratti[i][1] <= this.second[1] && this.second[1] <= this.tratti[i][2]) {
@@ -67,16 +67,11 @@ class Ripartizione {
     }
 
     _solveThird() {
-        //console.log('third: ', this.third)
         for(let i = 0; i < this.tratti.length; i++) {
             const pbegin = this.tratti[i][0];
-            //console.log('pbegin: ', pbegin)
             for(let j = i + 1; j < this.tratti.length; j++) {
                 const pend = this.tratti[j][0];
                 const p = pend - pbegin;
-                //console.log('pend: ', pend)
-                //console.log('p', p)
-                //console.log('approx', Math.abs(p - this.third));
                 if(Math.abs(p - this.third) < 0.00001) {
                     return this.tratti[i][1];
                 }
