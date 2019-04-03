@@ -73,7 +73,7 @@ class Ripartizione {
                 const pend = this.tratti[j][0];
                 const p = pend - pbegin;
                 if(Math.abs(p - this.third) < 0.00001) {
-                    return this.tratti[i][1];
+                    return this.tratti[i + 1][1];
                 }
                 else if(p > this.third) {
                     break;
