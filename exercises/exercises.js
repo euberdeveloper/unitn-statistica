@@ -11,6 +11,7 @@ const FunzioneProb = require('./2019-03-27');
 const FunzProb = require('./2019-03-28');
 const PesceAprile = require('./2019-04-01');
 const Singoletti = require('./2019-04-02');
+const Ripartizione = require('./2019-04-03');
 
 module.exports = [
     
@@ -365,6 +366,32 @@ module.exports = [
             }
         ],
         solution: Singoletti
+    },
+
+    {
+        date: '2019-04-03',
+        inputs: [
+            {
+                description: 'Funzione di ripartizione. Separare tratti con ; e numeri con , Non inserire il primo e l\'ultimo',
+                hint: 'Ad es: 0.0001, -1.587, -0.493; 0.0017, -0.493, 0.601; 0.0177, 0.601, 1.695; 0.1017, 1.695, 2.789; 0.3502, 2.789, 3.883; 0.7423, 3.883, 4.977;',
+                type: 'text'
+            },
+            {
+                description: 'Primo es: intervallo',
+                hint: 'Ad esempio: -0.493, 3.73',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: 0.601, 2.789',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: quanto vale P(x)',
+                type: 'number'
+            }
+        ],
+        solution: Ripartizione
     }
 
 ];
