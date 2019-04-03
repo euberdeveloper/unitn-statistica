@@ -372,7 +372,7 @@ module.exports = [
         date: '2019-04-03',
         inputs: [
             {
-                description: 'Funzione di ripartizione. Separare tratti con ; e numeri con , Non inserire il primo e l\'ultimo',
+                description: 'Funzione di ripartizione. Separare tratti con ; e numeri con , Non inserire il primo e l\'ultimo tratto (quelli con zero e uno)',
                 hint: 'Ad es: 0.0001, -1.587, -0.493; 0.0017, -0.493, 0.601; 0.0177, 0.601, 1.695; 0.1017, 1.695, 2.789; 0.3502, 2.789, 3.883; 0.7423, 3.883, 4.977;',
                 type: 'text'
             },
