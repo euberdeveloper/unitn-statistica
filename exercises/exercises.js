@@ -10,6 +10,7 @@ const Messaggi = require('./2019-03-26');
 const FunzioneProb = require('./2019-03-27');
 const FunzProb = require('./2019-03-28');
 const PesceAprile = require('./2019-04-01');
+const Singoletti = require('./2019-04-02');
 
 module.exports = [
     
@@ -333,6 +334,37 @@ module.exports = [
             }
         ],
         solution: PesceAprile
+    },
+
+    {
+        date: '2019-04-02',
+        inputs: [
+            {
+                description: 'Probabilità singoletti da 1 a 8',
+                hint: 'Ad esempio: 0.09, 0.13, 0.11, 0.13, 0.09, 0.14, 0.13, 0.18',
+                type: 'text'
+            },
+            {
+                description: 'Primo es: intervallo',
+                hint: 'Ad esempio: 3, 7',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: 4, inf',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: quanto vale x',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: x1 e x2 (in fila)',
+                hint: 'Ad esempio: 5, 6',
+                type: 'text'
+            }
+        ],
+        solution: Singoletti
     }
 
 ];

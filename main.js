@@ -31,24 +31,24 @@ const serializer = require('./utilities/serializer');
 const redirect = require('./utilities/redirect');
 
 app.use(compression());
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(redirect);
 }
 
 app.engine('html', ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
     providers: [
-      provideModuleMap(LAZY_MODULE_MAP)
+        provideModuleMap(LAZY_MODULE_MAP)
     ]
-  }));
-  
+}));
+
 app.set('view engine', 'html');
 app.set('views', path.join(DIST_FOLDER, 'browser'));
 
 app.get('*.*', express.static(path.join(DIST_FOLDER, 'browser')));
 
 app.get('*', (req, res) => {
-  res.render('index', { req });
+    res.render('index', { req });
 });
 
 app.use(cors());
@@ -61,9 +61,9 @@ app.use(morgan('dev'));
 
 app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date } = req.body;
-    if(user === AUTH.user && password === AUTH.password) {
+    if (user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);
-        if(!ex) {
+        if (!ex) {
             res.status(400).send({ message: 'Exercise not found' });
         }
         else {
