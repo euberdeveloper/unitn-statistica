@@ -424,7 +424,7 @@ module.exports = [
                 type: 'text'
             }
         ],
-        solution: Ripartizione
+        solution: AbbiamoVinto
     }
 
 ];
