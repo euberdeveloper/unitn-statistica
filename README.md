@@ -27,3 +27,7 @@ NB: Sometimes, expecially when exercises seems impossible to simulate, the simul
 
 ## How it was made
 The server was made with **Javascript**, specifically by using **NodeJs**. It sends to the client js scripts to run the simulations and serves the frontend. The frontend was made with **Angular**, by using **Angular Material** and **Angular Flexbox** for the style and **Angular Universal** to have an efficient server-side rendering. There is also the **Angular Service Worker**, wich makes the site a **pwa**.
+
+## How to build it
+If you are a developer and want to build it locally, download the project, install `node`, run `npm i` in the project directory and then you shall run `node main.local` to start a local server (out of heroku) serving the site and listening to port 8000. The frontend http domain should change to 'http://localhost:8000' to comunicate with the local server and be recompiled by moving to its directory, `cd angular` and by running `npm run build:ssr`.
+
