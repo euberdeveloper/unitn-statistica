@@ -13,6 +13,7 @@ const PesceAprile = require('./2019-04-01');
 const Singoletti = require('./2019-04-02');
 const Ripartizione = require('./2019-04-03');
 const AbbiamoVinto = require('./2019-04-04');
+const Daje = require('./2019-04-05');
 
 module.exports = [
     
@@ -425,6 +426,32 @@ module.exports = [
             }
         ],
         solution: AbbiamoVinto
+    },
+
+    {
+        date: '2019-04-05',
+        inputs: [
+            {
+                description: 'Funzione: valori nei punti 1, 2, 3, 5',
+                hint: 'Ad es: 0.115, 0.31, 0.5, 0.9',
+                type: 'text'
+            },
+            {
+                description: 'Primo es: singoletto',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: singoletti',
+                hint: 'Ad esempio: 3, 2',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: intervallo e singoletto',
+                hint: 'Ad esempio: 2.96, 5.62, 3',
+                type: 'text'
+            }
+        ],
+        solution: Daje
     }
 
 ];
