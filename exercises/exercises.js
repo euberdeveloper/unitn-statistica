@@ -12,6 +12,7 @@ const FunzProb = require('./2019-03-28');
 const PesceAprile = require('./2019-04-01');
 const Singoletti = require('./2019-04-02');
 const Ripartizione = require('./2019-04-03');
+const AbbiamoVinto = require('./2019-04-04');
 
 module.exports = [
     
@@ -389,6 +390,38 @@ module.exports = [
             {
                 description: 'Terzo es: quanto vale P(x)',
                 type: 'number'
+            }
+        ],
+        solution: Ripartizione
+    },
+
+    {
+        date: '2019-04-04',
+        inputs: [
+            {
+                description: 'Funzione di ripartizione. Separare tratti con ; e numeri con , Non inserire il primo e l\'ultimo tratto (quelli con zero e uno) e quello con il singoletto (prob. x = 3)',
+                hint: 'Ad es: 0.115, 1, 2; 0.31, 2, 3; 0.5, 0.25, 3, 3, 5; (Tenere premuto sulla I blu per + info)',
+                type: 'text'
+            },
+            {
+                description: 'Primo es: intervallo',
+                hint: 'Ad esempio: -inf, 2',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: 4, inf',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: intervallo',
+                hint: 'Ad esempio: 1, 2',
+                type: 'text'
+            },
+            {
+                description: 'Quarto es: intervallo',
+                hint: 'Ad esempio: 5, 7',
+                type: 'text'
             }
         ],
         solution: Ripartizione
