@@ -1,0 +1,15 @@
+{
+    "exclude": [ 
+        "node_modules", 
+        "git", 
+        ".editorconfig",
+        "project-tree",
+        "frontend\\browser\\",
+        "frontend\\server\\",
+        "doc",
+        "angular\\e2e",
+        "angular\\.editor",
+        "angular\\.git",
+        "angular\\app\\"
+    ]
+}

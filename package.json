@@ -7,7 +7,7 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "node test"
+    "project-tree": "dree parse ./ -d ./project-tree -n project.tree -o ./project-tree/options.json"
   },
   "repository": {
     "type": "git",
