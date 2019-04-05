@@ -101,6 +101,6 @@ class AbbiamoVinto {
 
 module.exports = AbbiamoVinto;
 
-const TIMES = 1e6;
+/*const TIMES = 1e6;
 const ex = new AbbiamoVinto('0.115, 1, 2; 0.31, 2, 3; 0.5, 0.25, 3, 3, 5;', '-inf, 2', '4, inf', '1, 2', '5, 7');
-ex.test(TIMES, n => console.log(n)).then(r => console.log(r));
+ex.test(TIMES, n => console.log(n)).then(r => console.log(r));*/
