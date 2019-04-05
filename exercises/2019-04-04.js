@@ -91,7 +91,7 @@ class AbbiamoVinto {
     }
 
     _solveFourth() {
-        return this._f(this.fourth[1] - this.DELTA) - this._f(this.fourth[0] === 5 ? this.fourth[0] : this.fourth - this.DELTA);
+        return this._f(this.fourth[1] - this.DELTA) - this._f(this.fourth[0] === 5 ? this.fourth[0] : this.fourth[0] - this.DELTA);
     }
 
     async test(times, callback) {
