@@ -19,7 +19,7 @@ NB: Sometimes, expecially when exercises seems impossible to simulate, the simul
 * Go to the website: [https://unitn-statistica.herokuapp.com/index](https://unitn-statistica.herokuapp.com/index)
 * Type the credentials (__lagrange__, __lagragna__) and select the exercise date. If you are offline or there was not an exercise in that date, an error toast will be desplayed.
 ![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/index.png)
-* Insert you exercises' values/parameters, by carefully following the fields instructions. Put a big number, one million or something, in the test iterations field. The bigger you put, the better you'll get but the longer you'll wait.
+* Insert your exercises' values/parameters, by carefully following the fields instructions. Put a big number, one million or something, in the test iterations field. The bigger you put, the better you'll get but the longer you'll wait.
 ![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form.png)
 ![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form_filled.png)
 * Wait till the script has finished to execute. There is a pretty loading spinner wich shows you the current progress.
