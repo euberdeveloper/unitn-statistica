@@ -106,7 +106,7 @@ class Daje {
 
     _solveThird() {
         const intervallo = this._intervallo(this.third[0], this.third[1]);
-        return (this.third[2] < this.third[1] ? intervallo : intervallo + this._singoletto(this.third[2]));
+        return (this.third[0] <= this.third[2] && this.third[2] <= this.third[1]  ? intervallo : intervallo + this._singoletto(this.third[2]));
     }
 
     async test(times, callback) {
