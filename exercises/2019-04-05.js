@@ -53,7 +53,7 @@ class Daje {
         while(y > x && y > 0) {
             let old = y;
             y -= 1;
-            if(3 < y && y <= 5) {
+            if(3 < old && old <= 5) {
                 y = 3;
                 res += this._f(old) - this._f(y);
             }
