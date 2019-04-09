@@ -14,7 +14,7 @@ const Singoletti = require('./2019-04-02');
 const Ripartizione = require('./2019-04-03');
 const AbbiamoVinto = require('./2019-04-04');
 const Daje = require('./2019-04-05');
-const DadoBinomiale = require('./2019-04-05');
+const DadoBinomiale = require('./2019-04-08');
 
 module.exports = [
     
