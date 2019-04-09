@@ -15,6 +15,7 @@ const Ripartizione = require('./2019-04-03');
 const AbbiamoVinto = require('./2019-04-04');
 const Daje = require('./2019-04-05');
 const DadoBinomiale = require('./2019-04-08');
+const DadoGeometrico = require('./2019-04-09');
 
 module.exports = [
     
@@ -478,6 +479,35 @@ module.exports = [
             }
         ],
         solution: DadoBinomiale
+    },
+
+    {
+        date: '2019-04-09',
+        inputs: [
+            {
+                description: 'Inserisci i valori delle probabilità',
+                hint: 'Ad es: 0.13, 0.13, 0.09, 0.23, 0.36, 0.06',
+                type: 'text'
+            },
+            {
+                description: 'Numeri per cui si ha un successo',
+                hint: 'Ad es: 1, 2',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: esattamente a quale lancio?',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: più di quanti lanci?',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: x minore o uguale a cosa?',
+                type: 'number'
+            }
+        ],
+        solution: DadoGeometrico
     }
 
 ];
