@@ -486,12 +486,12 @@ module.exports = [
         inputs: [
             {
                 description: 'Inserisci i valori delle probabilità',
-                hint: 'Ad es: 0.13, 0.13, 0.09, 0.23, 0.36, 0.06',
+                hint: 'Ad es: 0.23, 0.16, 0.15, 0.16, 0.16, 0.14',
                 type: 'text'
             },
             {
                 description: 'Numeri per cui si ha un successo',
-                hint: 'Ad es: 1, 2',
+                hint: 'Ad es: 2, 5',
                 type: 'text'
             },
             {
