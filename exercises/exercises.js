@@ -14,6 +14,7 @@ const Singoletti = require('./2019-04-02');
 const Ripartizione = require('./2019-04-03');
 const AbbiamoVinto = require('./2019-04-04');
 const Daje = require('./2019-04-05');
+const DadoBinomiale = require('./2019-04-05');
 
 module.exports = [
     
@@ -452,6 +453,31 @@ module.exports = [
             }
         ],
         solution: Daje
+    },
+
+    {
+        date: '2019-04-08',
+        inputs: [
+            {
+                description: 'Inserisci i valori delle probabilità',
+                hint: 'Ad es: 0.13, 0.13, 0.09, 0.23, 0.36, 0.06',
+                type: 'text'
+            },
+            {
+                description: 'Numeri per cui si ha un successo',
+                hint: 'Ad es: 1, 2',
+                type: 'text'
+            },
+            {
+                description: 'Numero di lanci in totale',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: almeno quanti successi',
+                type: 'number'
+            }
+        ],
+        solution: DadoBinomiale
     }
 
 ];
