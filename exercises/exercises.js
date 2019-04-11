@@ -16,6 +16,7 @@ const AbbiamoVinto = require('./2019-04-04');
 const Daje = require('./2019-04-05');
 const DadoBinomiale = require('./2019-04-08');
 const DadoGeometrico = require('./2019-04-09');
+const GuidaAutonoma = require('./2019-04-10');
 
 module.exports = [
     
@@ -508,6 +509,28 @@ module.exports = [
             }
         ],
         solution: DadoGeometrico
+    },
+
+    {
+        date: '2019-04-10',
+        inputs: [
+            {
+                description: 'Inserisci la percentuale di successo',
+                hint: 'Ad es: 95.6',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: numero misurazioni esatte',
+                hint: 'Ad es: 23',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: ->ulteriori<- misurazioni esatte?',
+                hint: 'Ad es: 15',
+                type: 'number'
+            }
+        ],
+        solution: GuidaAutonoma
     }
 
 ];
