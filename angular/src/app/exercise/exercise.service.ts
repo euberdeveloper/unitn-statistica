@@ -33,6 +33,7 @@ export class ExerciseService {
     this.exercise = exercise ? {
       date: exercise.date,
       inputs: exercise.inputs,
+      simulated: exercise.simulated,
       solution: this.deser.deserialize(exercise.solution)
     } : null;
   }

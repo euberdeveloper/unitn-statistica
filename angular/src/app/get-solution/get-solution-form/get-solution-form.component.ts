@@ -36,7 +36,7 @@ export class GetSolutionFormComponent {
   getSolution(): void {
     if(this.form.valid) {
       const { times, ...inputs } = this.form.value;
-      this.getSolutionEmitter.emit({ inputs: Object.values(inputs), times });
+      this.getSolutionEmitter.emit({ inputs: Object.values(inputs), times: times || 1 });
     }
   }
 
