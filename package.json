@@ -45,8 +45,10 @@
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "ng2-adsense": "^5.4.1",
+    "ngx-webstorage": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
+    "uuid": "^3.3.2",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {

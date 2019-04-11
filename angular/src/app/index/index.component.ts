@@ -6,6 +6,7 @@ import { Moment } from 'moment';
 import { HttpService } from '../http/http.service';
 import { ExerciseService } from '../exercise/exercise.service';
 import { AlertService, SnackType } from '../alert/alert.service';
+import { UserInfoService } from '../userinfo/user-info.service';
 
 @Component({
   selector: 'app-index',
@@ -19,8 +20,9 @@ export class IndexComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private http: HttpService,
+    private userInfo: UserInfoService,
     private ex: ExerciseService,
     private alert: AlertService
   ) { }
@@ -45,7 +47,7 @@ export class IndexComponent implements OnInit {
   }
 
   go() {
-    if(this.form.valid) {
+    if (this.form.valid) {
       const momentDate = this.exercise.value as Moment;
       const year = momentDate.year();
       const month = momentDate.month();
@@ -54,11 +56,12 @@ export class IndexComponent implements OnInit {
       this.http.provideExercise({
         user: this.user.value,
         password: this.password.value,
-        date
+        date,
+        userInfo: this.userInfo.info
       }).subscribe(
         result => {
           this.ex.setExercise(result);
-          this.router.navigate([ 'get-solution' ]);
+          this.router.navigate(['get-solution']);
         },
         error => this.alert.pushSnackbar({
           type: SnackType.ERROR,

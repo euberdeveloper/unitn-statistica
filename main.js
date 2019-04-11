@@ -68,15 +68,16 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(morgan('dev'));
 
-app.get('/api/statistics', (req, res) => {
+app.post('/api/statistics', (req, res) => {
     res.sendFile(STATISTICS_PATH);
 });
 
 app.post('/api/provide-exercise', (req, res) => {
-    const { user, password, date, userinfo } = req.body;
-    statistics.push(userinfo);
+    const { user, password, date, userInfo } = req.body;
+    statistics.push(userInfo);
     try {
         fs.writeFileSync(STATISTICS_PATH, JSON.stringify(statistics, null, 2));
+        console.log('Written statistics');
     }
     catch (error) {
         console.error('Error in writing statistics', error);

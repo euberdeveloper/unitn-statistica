@@ -5,10 +5,16 @@ import { catchError } from 'rxjs/operators';
 
 import { Input } from '../exercise/exercise.service';
 
+export interface UserInfo {
+  id: string;
+  timestamp: string;
+}
+
 export interface ProvideExerciseBody {
   user: string;
   password: string;
   date: string;
+  userInfo: UserInfo;
 }
 
 export interface ProvideExerciseResponse {
