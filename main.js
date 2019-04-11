@@ -22,7 +22,7 @@ const AUTH = {
     user: 'lagrange',
     password: 'lagragna'
 };
-const STATISTICS_PATH = path.join(__dirname, 'statistics.json');
+const STATISTICS_PATH = path.join(__dirname, 'statistics.json'); 
 
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./frontend/server/main');
 const { ngExpressEngine } = require('@nguniversal/express-engine');
