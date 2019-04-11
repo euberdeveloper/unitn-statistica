@@ -17,7 +17,7 @@ export class GetSolutionFormComponent {
   set inputs(inputs: ExerciseInput[]) {
     this._inputs = inputs;
     if(inputs) {
-      this.form = this.fb.group({ ...inputs.map(_input => [ null, Validators.required ]), times: [ null, Validators.required ] });
+      this.form = this.fb.group({ ...inputs.map(_input => [ null, Validators.required ]), times: [ null, (this.simulated ? Validators.required : []) ] });
     }
   }
   private _inputs: ExerciseInput[];

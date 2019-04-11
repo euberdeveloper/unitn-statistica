@@ -1432,7 +1432,7 @@ var GetSolutionFormComponent = /** @class */ (function () {
         set: function (inputs) {
             this._inputs = inputs;
             if (inputs) {
-                this.form = this.fb.group(tslib_1.__assign({}, inputs.map(function (_input) { return [null, forms_1.Validators.required]; }), { times: [null, forms_1.Validators.required] }));
+                this.form = this.fb.group(tslib_1.__assign({}, inputs.map(function (_input) { return [null, forms_1.Validators.required]; }), { times: [null, (this.simulated ? forms_1.Validators.required : [])] }));
             }
         },
         enumerable: true,

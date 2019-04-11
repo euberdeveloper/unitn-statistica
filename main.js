@@ -3,6 +3,7 @@ require('reflect-metadata');
 
 const { enableProdMode } = require('@angular/core');
 
+const fs = require('fs');
 const path = require('path');
 const compression = require('compression')
 const morgan = require('morgan');
