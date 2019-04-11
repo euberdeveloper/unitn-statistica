@@ -27,7 +27,7 @@
 
       </ng-container>
 
-      <mat-form-field fxFlexAlign="stretch">
+      <mat-form-field fxFlexAlign="stretch" *ngIf="simulated">
         <input matInput type="number" placeholder="Tests number" formControlName="times" required />
         <mat-error *ngIf="getFormControl('times').hasError('required')">This input is <strong>required</strong>
         </mat-error>

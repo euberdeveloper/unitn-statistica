@@ -30,6 +30,14 @@ const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
 const redirect = require('./utilities/redirect');
 
+let statistics;
+try {
+    statistics = JSON.parse(fs.readFileSync(STATISTICS_PATH), 'utf8');
+}
+catch {
+    statistics = [];
+}
+
 app.use(compression());
 if (process.env.NODE_ENV === 'production') {
     app.use(redirect);
@@ -59,8 +67,19 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(morgan('dev'));
 
+app.get('/api/statistics', (req, res) => {
+    res.sendFile(STATISTICS_PATH);
+});
+
 app.post('/api/provide-exercise', (req, res) => {
-    const { user, password, date } = req.body;
+    const { user, password, date, userinfo } = req.body;
+    statistics.push(userinfo);
+    try {
+        fs.writeFileSync(STATISTICS_PATH, JSON.stringify(statistics, null, 2));
+    }
+    catch (error) {
+        console.error('Error in writing statistics', error);
+    }
     if (user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);
         if (!ex) {

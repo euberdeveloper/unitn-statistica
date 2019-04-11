@@ -13,6 +13,7 @@ export interface Exercise {
   date: string;
   inputs: Input[];
   solution: any;
+  simulated: boolean;
 }
 
 @Injectable({

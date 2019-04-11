@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -12,9 +13,18 @@ const AUTH = {
     user: 'lagrange',
     password: 'lagragna'
 };
+const STATISTICS_PATH = path.join(__dirname, 'statistics.json');
 
 const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
+
+let statistics;
+try {
+    statistics = JSON.parse(fs.readFileSync(STATISTICS_PATH), 'utf8');
+}
+catch {
+    statistics = [];
+}
 
 app.get('/', express.static(path.join('frontend', 'browser')));
 
@@ -26,8 +36,19 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+app.get('/api/statistics', (req, res) => {
+    res.sendFile(STATISTICS_PATH);
+});
+
 app.post('/api/provide-exercise', (req, res) => {
-    const { user, password, date } = req.body;
+    const { user, password, date, userinfo } = req.body;
+    statistics.push(userinfo);
+    try {
+        fs.writeFileSync(STATISTICS_PATH, JSON.stringify(statistics, null, 2));
+    }
+    catch (error) {
+        console.error('Error in writing statistics', error);
+    }
     if(user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);
         if(!ex) {

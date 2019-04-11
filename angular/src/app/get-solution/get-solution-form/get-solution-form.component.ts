@@ -23,6 +23,7 @@ export class GetSolutionFormComponent {
   private _inputs: ExerciseInput[];
 
   @Input() date: string;
+  @Input() simulated: boolean;
   @Output('getSolution') getSolutionEmitter = new EventEmitter<{ inputs: string[], times: number }>();
   form: FormGroup;
 

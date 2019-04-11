@@ -49,6 +49,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: true,
         solution: FornitoriEMeteo
     },
 
@@ -79,6 +80,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: true,
         solution: DiceAndBalls
     },
 
@@ -112,6 +114,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: ComitatoMeccanica
     },
 
@@ -145,6 +148,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: true,
         solution: DueScatole
     },
 
@@ -156,6 +160,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: false,
         solution: Bandiere
     },
 
@@ -175,6 +180,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: true,
         solution: DiceGame
     },
 
@@ -190,6 +196,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: true,
         solution: Sottoinsiemi
     },
 
@@ -210,6 +217,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: true,
         solution: Gatti
     },
 
@@ -244,6 +252,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: true,
         solution: Messaggi
     },
 
@@ -275,6 +284,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: FunzioneProb
     },
 
@@ -302,6 +312,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: false,
         solution: FunzProb
     },
 
@@ -339,6 +350,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: PesceAprile
     },
 
@@ -370,6 +382,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: Singoletti
     },
 
@@ -396,6 +409,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: false,
         solution: Ripartizione
     },
 
@@ -428,6 +442,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: AbbiamoVinto
     },
 
@@ -454,6 +469,7 @@ module.exports = [
                 type: 'text'
             }
         ],
+        simulated: false,
         solution: Daje
     },
 
@@ -479,6 +495,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: false,
         solution: DadoBinomiale
     },
 
@@ -508,6 +525,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: false,
         solution: DadoGeometrico
     },
 
@@ -530,6 +548,7 @@ module.exports = [
                 type: 'number'
             }
         ],
+        simulated: true,
         solution: GuidaAutonoma
     }
 
