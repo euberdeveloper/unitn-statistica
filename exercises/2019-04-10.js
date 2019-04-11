@@ -29,7 +29,7 @@ class GuidaAutonoma {
     }
 
     _solveThird() {
-        for(let i = 0; i < this.second + this.third; i++) {
+        for(let i = 0; i < this.second + this.third - 1; i++) {
             if(this._pick() === this.Esito.FAIL) {
                 return false;
             }
