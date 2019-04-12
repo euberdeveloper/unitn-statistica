@@ -588,7 +588,7 @@ module.exports = [
             }
         ],
         simulated: true,
-        solution: GuidaAutonoma
+        solution: TestItaliano
     }
 
 ];
