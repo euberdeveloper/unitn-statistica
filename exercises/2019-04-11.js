@@ -40,17 +40,17 @@ class BinomialeNegativa {
         for (let i = 0; i < this.fourth; i++) {
             if (this._answer() === this.Answer.RIGHT) {
                 corr++;
-                if(i !== this.fourth - 1) {
+                if(corr == this.r && i !== this.fourth - 1) {
                     return false;
                 }
             }
         }
-        return corr >= this.r;
+        return corr == this.r;
     }
 
     _solveFifth() {
         let corr = 0, iterations = 0;
-        while(corr < this.fifth) {
+        while(corr < this.r) {
             if (this._answer() === this.Answer.RIGHT) {
                 corr++;
             }
@@ -60,13 +60,13 @@ class BinomialeNegativa {
     }
 
     async _test(times, current, values, callback) {
-        const gap = 1e5;
+        const gap = 1e4;
 
         let [ first, second, third, fourth, fifth ] = values;
         for(let i = current; i < times && i - current < gap; i++) {
-            //if(this._solveThird()) third++;
+            if(this._solveThird()) third++;
             if(this._solveFourth()) fourth++;
-            //if(this._solveFifth()) fifth++;
+            if(this._solveFifth()) fifth++;
         }
         if(current + gap >= times) {
             return [ first, second, third / times, fourth / times, fifth / times ];
@@ -86,6 +86,6 @@ class BinomialeNegativa {
 
 module.exports = BinomialeNegativa;
 
-const TIMES = 1e6;
+/*const TIMES = 1e7;
 const ex = new BinomialeNegativa(19, 61.9, 19, 0.507, 27, 23.8);
-ex.test(TIMES, n => console.log(n)).then(r => console.log(r));
+ex.test(TIMES, () => {}, n => console.log(n)).then(r => console.log(r));*/

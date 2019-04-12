@@ -17,6 +17,7 @@ const Daje = require('./2019-04-05');
 const DadoBinomiale = require('./2019-04-08');
 const DadoGeometrico = require('./2019-04-09');
 const GuidaAutonoma = require('./2019-04-10');
+const TestItaliano = require('./2019-04-11');
 
 module.exports = [
     
@@ -545,6 +546,44 @@ module.exports = [
             {
                 description: 'Terzo es: ->ulteriori<- misurazioni esatte?',
                 hint: 'Ad es: 15',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: GuidaAutonoma
+    },
+
+    {
+        date: '2019-04-11',
+        inputs: [
+            {
+                description: 'Risposte corrette per passare l\'esame',
+                hint: 'Ad es: 19',
+                type: 'number'
+            },
+            {
+                description: 'Probabilità risposta corretta in percentuale',
+                hint: 'Ad es: 61.9',
+                type: 'number'
+            },
+            {
+                description: 'Es 3: quanto vale r',
+                hint: 'Ad es: 19',
+                type: 'number'
+            },
+            {
+                description: 'Es 3: quanto vale p',
+                hint: 'Ad es: 0.507',
+                type: 'number'
+            },
+            {
+                description: 'Es 4: dopo quante risposte passa il test',
+                hint: 'Ad es: 27',
+                type: 'number'
+            },
+            {
+                description: 'Es 5: X minore o uguale a?',
+                hint: 'Ad es: 23.8',
                 type: 'number'
             }
         ],
