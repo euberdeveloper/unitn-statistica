@@ -18,6 +18,7 @@ const DadoBinomiale = require('./2019-04-08');
 const DadoGeometrico = require('./2019-04-09');
 const GuidaAutonoma = require('./2019-04-10');
 const TestItaliano = require('./2019-04-11');
+const Poisson = require('./2019-04-12');
 
 module.exports = [
     
@@ -589,6 +590,30 @@ module.exports = [
         ],
         simulated: true,
         solution: TestItaliano
+    },
+
+    {
+        date: '2019-04-12',
+        inputs: [
+            {
+                description: 'Numero medio di macchine',
+                type: 'number'
+            },
+            {
+                description: 'Es 2: quante macchine esattamente',
+                type: 'number'
+            },
+            {
+                description: 'Es 3: quante macchine almeno',
+                type: 'number'
+            },
+            {
+                description: 'Es 3: quante macchine al massimo',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Poisson
     }
 
 ];
