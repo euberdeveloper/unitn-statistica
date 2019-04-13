@@ -24,7 +24,7 @@ class Poisson {
     }
 
     _solveSecond() {
-        return this._poisson(5);
+        return this._poisson(this.esattamente);
     }
 
     _solveThird() {
