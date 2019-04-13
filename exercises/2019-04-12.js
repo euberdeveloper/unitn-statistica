@@ -42,6 +42,6 @@ class Poisson {
 
 module.exports = Poisson;
 
-const TIMES = 1e6;
+/*const TIMES = 1e6;
 const ex = new Poisson(4, 5, 5, 8);
-ex.test(TIMES, () => {}, n => console.log(n)).then(r => console.log(r));
+ex.test(TIMES, () => {}, n => console.log(n)).then(r => console.log(r));*/
