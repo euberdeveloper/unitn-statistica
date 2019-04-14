@@ -17,9 +17,9 @@ const app = express();
 enableProdMode();
 
 const mongoose = require('mongoose')
-mongoose.connect(`mongodb+srv://euber:Tr0nSch%21o2018@unitn-statistica-tdq8w.mongodb.net/test`, {useNewUrlParser: true})
+mongoose.connect(`mongodb+srv://euber:Tr0nSch%21o2018@unitn-statistica-tdq8w.mongodb.net/test?retryWrites=true`, {useNewUrlParser: true})
   .then(() => {
-    console.log(`MONGOOOOOOO`);
+    console.log(`MONGOOOO`);
   })
   .catch(err => console.error(err));
 
