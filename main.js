@@ -1,28 +1,6 @@
 require('zone.js/dist/zone-node');
 require('reflect-metadata');
 
-const { enableProdMode } = require('@angular/core');
-
-const fs = require('fs');
-const path = require('path');
-const compression = require('compression')
-const morgan = require('morgan');
-const cors = require('cors');
-const helmet = require('helmet');
-const bodyParser = require('body-parser');
-
-const express = require('express');
-const app = express();
-
-enableProdMode();
-
-const mongoose = require('mongoose')
-mongoose.connect(`mongodb+srv://euber:Tr0nSch%21o2018@unitn-statistica-tdq8w.mongodb.net/test?retryWrites=true`, {useNewUrlParser: true})
-  .then(() => {
-    console.log(`MONGOOOO`);
-  })
-  .catch(err => console.error(err));
-
 const PORT = process.env.PORT || 8000;
 const DIST_FOLDER = path.join(process.cwd(), 'frontend');
 const AUTH = {
