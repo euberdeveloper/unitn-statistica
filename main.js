@@ -16,6 +16,13 @@ const app = express();
 
 enableProdMode();
 
+const mongoose = require('mongoose')
+mongoose.connect(`mongodb+srv://euber:Tr0nSch%21o2018@unitn-statistica-tdq8w.mongodb.net/test`, {useNewUrlParser: true})
+  .then(() => {
+    console.log(`MONGOOOOOOO`);
+  })
+  .catch(err => console.error(err));
+
 const PORT = process.env.PORT || 8000;
 const DIST_FOLDER = path.join(process.cwd(), 'frontend');
 const AUTH = {
@@ -42,7 +49,7 @@ catch {
 
 app.use(compression());
 if (process.env.NODE_ENV === 'production') {
-    app.use(redirect);
+   app.use(redirect);
 }
 
 app.engine('html', ngExpressEngine({
