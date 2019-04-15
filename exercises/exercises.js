@@ -19,6 +19,7 @@ const DadoGeometrico = require('./2019-04-09');
 const GuidaAutonoma = require('./2019-04-10');
 const TestItaliano = require('./2019-04-11');
 const Poisson = require('./2019-04-12');
+const Libri = require('./2019-04-15');
 
 module.exports = [
     
@@ -614,6 +615,32 @@ module.exports = [
         ],
         simulated: false,
         solution: Poisson
+    },
+
+    {
+        date: '2019-04-15',
+        inputs: [
+            {
+                description: 'Probabilità difettoso in percentuale',
+                type: 'number'
+            },
+            {
+                description: 'Totale libri in lotto',
+                type: 'number'
+            },
+            {
+                description: 'Es 2: quanti libri esattamente perfetti',
+                hint: 'mettere almeno 10^7 o 10^8 test',
+                type: 'number'
+            },
+            {
+                description: 'Es 3: non più di quanti libri difettosi?',
+                hint: 'Anche qui numero test alto. Su pc più veloce.',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: Libri
     }
 
 ];
