@@ -77,7 +77,7 @@ app.post('/api/statistics', (req, res) => {
             }
             else {
                 const statistics = [];
-                snapshot.forEach(user => res.push(user));
+                snapshot.forEach(user => statistics.push({ ...user.data(), id: user.id }));
                 res.status(200).send(statistics);
             }
         })

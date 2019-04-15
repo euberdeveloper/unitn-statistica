@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const data = JSON.stringify(require('../firebase-decrypted.json'));
 
 try {
-    const Cipher = crypto.createCipher('aes-192-cbc', process.env.FIREBASE_CREDENTIALS_DECRYPTION_KEY);
+    const Cipher = crypto.createCipher('aes-192-cbc', process.env.FIREBASE_CREDENTIALS_DECRYPTION_KEY || require('../local.json').firebasePassword);
     let encrypted = Cipher.update(data, 'utf8', 'base64');
     encrypted += Cipher.final('base64');
 
