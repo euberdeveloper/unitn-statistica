@@ -70,14 +70,25 @@ app.use(bodyParser.urlencoded({
 app.use(morgan('dev'));
 
 app.post('/api/statistics', (req, res) => {
-    res.sendFile(STATISTICS_PATH);
+    db.collection('statistics').get()
+        .then(snapshot => {
+            if(snapshot.empty) {
+                res.status(200).send('No statistics');
+            }
+            else {
+                const statistics = [];
+                snapshot.forEach(user => res.push(user));
+                res.status(200).send(statistics);
+            }
+        })
+        .catch(error => res.status(500).send({ message: 'Error in getting statistics', error }));
 });
 
 app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date, userInfo } = req.body;
     if (userInfo) {
         const anonymous = db.collection('statistics').doc(userInfo.id);
-        anonymous.update({ timestamps: FieldValue.arrayUnion(userInfo.timestamp) })
+        anonymous.update({ timestamps: FieldValue.arrayUnion(userInfo.timestamp), exercise: date })
             .catch(() => {
                 db.collection('statistics').doc(userInfo.id).create({ timestamps: [userInfo.timestamp] });
             });
@@ -87,7 +98,7 @@ app.post('/api/provide-exercise', (req, res) => {
         const now = (new Date()).toISOString();
         anonymous.update({ timestamps: FieldValue.arrayUnion(now) })
             .catch(() => {
-                db.collection('statistics').doc('anonymous').create({ timestamps: [now] });
+                db.collection('statistics').doc('anonymous').create({ timestamps: [now], exercise: date });
             });
     }
     if (user === AUTH.user && password === AUTH.password) {
