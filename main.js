@@ -87,17 +87,25 @@ app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date, userInfo } = req.body;
     if (userInfo) {
         const anonymous = db.collection('statistics').doc(userInfo.id);
-        anonymous.update({ timestamps: FieldValue.arrayUnion(userInfo.timestamp), exercise: date })
+        const value = {
+            timestamp: userInfo.timestamp,
+            exercise: date
+        };
+        anonymous.update({ accesses: FieldValue.arrayUnion(value) })
             .catch(() => {
-                db.collection('statistics').doc(userInfo.id).create({ timestamps: [userInfo.timestamp] });
+                db.collection('statistics').doc(userInfo.id).create({ accesses: [value] });
             });
     }
     else {
         const anonymous = db.collection('statistics').doc('anonymous');
         const now = (new Date()).toISOString();
-        anonymous.update({ timestamps: FieldValue.arrayUnion(now) })
+        const value = {
+            timestamp: now,
+            exercise: date
+        };
+        anonymous.update({ accesses: FieldValue.arrayUnion(value) })
             .catch(() => {
-                db.collection('statistics').doc('anonymous').create({ timestamps: [now], exercise: date });
+                db.collection('statistics').doc('anonymous').create({ accesses: [value] });
             });
     }
     if (user === AUTH.user && password === AUTH.password) {
