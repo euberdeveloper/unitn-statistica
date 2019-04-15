@@ -14,6 +14,15 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
+const admin = require('firebase-admin');
+const serviceAccount = require('./utilities/firebase-credentials')();
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://unitn-statistica.firebaseio.com'
+});
+const db = admin.firestore();
+const FieldValue = admin.firestore.FieldValue;
+
 enableProdMode();
 
 const PORT = process.env.PORT || 8000;
@@ -22,7 +31,6 @@ const AUTH = {
     user: 'lagrange',
     password: 'lagragna'
 };
-const STATISTICS_PATH = path.join(__dirname, 'statistics.json'); 
 
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./frontend/server/main');
 const { ngExpressEngine } = require('@nguniversal/express-engine');
@@ -32,17 +40,9 @@ const exercises = require('./exercises/exercises');
 const serializer = require('./utilities/serializer');
 const redirect = require('./utilities/redirect');
 
-let statistics;
-try {
-    statistics = JSON.parse(fs.readFileSync(STATISTICS_PATH), 'utf8');
-}
-catch {
-    statistics = [];
-}
-
 app.use(compression());
 if (process.env.NODE_ENV === 'production') {
-   app.use(redirect);
+    app.use(redirect);
 }
 
 app.engine('html', ngExpressEngine({
@@ -75,13 +75,20 @@ app.post('/api/statistics', (req, res) => {
 
 app.post('/api/provide-exercise', (req, res) => {
     const { user, password, date, userInfo } = req.body;
-    statistics.push(userInfo);
-    try {
-        fs.writeFileSync(STATISTICS_PATH, JSON.stringify(statistics, null, 2));
-        console.log('Written statistics');
+    if (userInfo) {
+        const anonymous = db.collection('statistics').doc(userInfo.id);
+        anonymous.update({ timestamps: FieldValue.arrayUnion(userInfo.timestamp) })
+            .catch(() => {
+                db.collection('statistics').doc(userInfo.id).create({ timestamps: [userInfo.timestamp] });
+            });
     }
-    catch (error) {
-        console.error('Error in writing statistics', error);
+    else {
+        const anonymous = db.collection('statistics').doc('anonymous');
+        const now = (new Date()).toISOString();
+        anonymous.update({ timestamps: FieldValue.arrayUnion(now) })
+            .catch(() => {
+                db.collection('statistics').doc('anonymous').create({ timestamps: [now] });
+            });
     }
     if (user === AUTH.user && password === AUTH.password) {
         const ex = exercises.find(exercise => exercise.date === date);

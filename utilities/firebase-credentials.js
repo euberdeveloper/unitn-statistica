@@ -1,13 +1,11 @@
-const data =  ``;
-
+const fs = require('fs');
+const path = require('path');
 const crypto = require('crypto');
 
-const cipher = crypto.createCipher('aes-192-cbc', '2 ^ zip FRUIT > < VISA SKYPE 6 YELP zip HULU 9 COFFEE 7 ');
-let res = cipher.update(data, 'utf8', 'base64');
-res += cipher.final('base64');
-
-const decipher = crypto.createDecipher('aes-192-cbc', '2 ^ zip FRUIT > < VISA SKYPE 6 YELP zip HULU 9 COFFEE 7 ');
-let rrres = decipher.update(res, 'base64', 'utf8');
-rrres += decipher.final('utf8');
-
-console.log(rrres);
+module.exports = function() {
+    const data = fs.readFileSync(path.join(__dirname, '../', 'firebase-encrypted.txt'), 'utf8');
+    const Decipher = crypto.createDecipher('aes-192-cbc',  process.env.FIREBASE_CREDENTIALS_DECRYPTION_KEY);
+    let decrypted = Decipher.update(data, 'base64', 'utf8');
+    decrypted += Decipher.final('utf8');
+    return JSON.parse(decrypted);
+}
