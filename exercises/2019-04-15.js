@@ -38,7 +38,7 @@ class Libri {
     }
 
     _solveThird() {
-        return this.difettosi <= 25;
+        return this.difettosi <= this.third;
     }
 
     async _test(times, current, values, callback) {
