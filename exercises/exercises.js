@@ -20,6 +20,7 @@ const GuidaAutonoma = require('./2019-04-10');
 const TestItaliano = require('./2019-04-11');
 const Poisson = require('./2019-04-12');
 const Libri = require('./2019-04-15');
+const FunDensita = require('./2019-04-16');
 
 module.exports = [
     
@@ -641,6 +642,19 @@ module.exports = [
         ],
         simulated: true,
         solution: Libri
+    },
+
+    {
+        date: '2019-04-16',
+        inputs: [
+            {
+                description: 'Quarto esercizio: x minore o uguale a',
+                hint: 'La funzione è c * x^2',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: FunDensita
     }
 
 ];
