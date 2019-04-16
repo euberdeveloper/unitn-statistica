@@ -1,23 +1,24 @@
 class FunDensita {
 
-    constructor(fourth) {
+    constructor(quadratic, fourth) {
+        this.quadratic = quadratic;
         this.fourth = +fourth;
     }
 
     _solveFirst() {
-        return 3;
+        return (this.quadratic ? 3 : 4);
     }
 
     _solveSecond() {
-        return 3 / 4;
+        return (this.quadratic ? 3 / 4 : 4 / 5);
     }
 
     _solveThird() {
-        return 3 / 80;
+        return (this.quadratic ? 3 / 80 : 2 / 75);
     }
 
     _solveFourth() {
-        return this.fourth ** 3;
+        return (this.quadratic ? this.fourth ** 3 : this.fourth ** 4);
     }
 
     async test(times, callback) {
@@ -28,5 +29,5 @@ class FunDensita {
 module.exports = FunDensita;
 
 /*const TIMES = 1e8;
-const ex = new FunDensita(0.77);
+const ex = new FunDensita(true, 0.77);
 ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));*/

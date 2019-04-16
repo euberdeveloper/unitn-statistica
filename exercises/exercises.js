@@ -23,7 +23,7 @@ const Libri = require('./2019-04-15');
 const FunDensita = require('./2019-04-16');
 
 module.exports = [
-    
+
     {
         date: '2019-03-14',
         inputs: [
@@ -648,8 +648,12 @@ module.exports = [
         date: '2019-04-16',
         inputs: [
             {
+                description: 'Hai la funzione quadratica',
+                hint: 'Deselezionare se hai c * x^3',
+                type: 'switch'
+            },
+            {
                 description: 'Quarto esercizio: x minore o uguale a',
-                hint: 'La funzione è c * x^2',
                 type: 'number'
             }
         ],
