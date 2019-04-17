@@ -21,6 +21,7 @@ const TestItaliano = require('./2019-04-11');
 const Poisson = require('./2019-04-12');
 const Libri = require('./2019-04-15');
 const FunDensita = require('./2019-04-16');
+const Integrali = require('./2019-04-17');
 
 module.exports = [
 
@@ -658,6 +659,34 @@ module.exports = [
         ],
         simulated: false,
         solution: FunDensita
+    },
+
+    {
+        date: '2019-04-17',
+        inputs: [
+            {
+                description: 'Lambda',
+                hint: 'Ad esempio: 0.59',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: x <= di?',
+                hint: 'Ad esempio: 0.85',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: intervallo',
+                hint: 'Ad esempio: 0.1, 1.38',
+                type: 'text'
+            },
+            {
+                description: 'Alfa',
+                hint: 'Ad esempio 0.64',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Integrali
     }
 
 ];
