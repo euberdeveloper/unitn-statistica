@@ -648,9 +648,8 @@ module.exports = [
         date: '2019-04-16',
         inputs: [
             {
-                description: 'Hai la funzione quadratica',
-                hint: 'Deselezionare se hai c * x^3',
-                type: 'switch'
+                description: 'Esponente della funzione',
+                type: 'number'
             },
             {
                 description: 'Quarto esercizio: x minore o uguale a',
