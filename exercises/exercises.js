@@ -22,6 +22,7 @@ const Poisson = require('./2019-04-12');
 const Libri = require('./2019-04-15');
 const FunDensita = require('./2019-04-16');
 const Integrali = require('./2019-04-17');
+const Densita = require('./2019-04-18');
 
 module.exports = [
 
@@ -687,6 +688,29 @@ module.exports = [
         ],
         simulated: false,
         solution: Integrali
+    },
+
+    {
+        date: '2019-04-18',
+        inputs: [
+            {
+                description: 'Scrivere H: k(H - 2x)',
+                hint: 'Ad esempio: 12.9',
+                type: 'number'
+            },
+            {
+                description: 'Intervallo della funzione',
+                hint: 'Ad esempio: 0, 5',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: A + BX; scrivere A e B',
+                hint: 'Ad esempio: 19.4, -5.3',
+                type: 'text'
+            }
+        ],
+        simulated: false,
+        solution: Densita
     }
 
 ];
