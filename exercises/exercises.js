@@ -23,6 +23,7 @@ const Libri = require('./2019-04-15');
 const FunDensita = require('./2019-04-16');
 const Integrali = require('./2019-04-17');
 const Densita = require('./2019-04-18');
+const Standardizzazione = require('./2019-04-19');
 
 module.exports = [
 
@@ -711,6 +712,34 @@ module.exports = [
         ],
         simulated: false,
         solution: Densita
+    },
+
+    {
+        date: '2019-04-19',
+        inputs: [
+            {
+                description: 'Scrivere mu:',
+                hint: 'Ad esempio: 162.5',
+                type: 'number'
+            },
+            {
+                description: 'Scrivere sigma:',
+                hint: 'Ad esempio: 4.27',
+                type: 'number'
+            },
+            {
+                description: 'Primo e secondo es: scrivere X',
+                hint: 'Ad esempio: 166.8981',
+                type: 'number'
+            },
+            {
+                description: 'Terzo esercizio: X maggiore o uguale a',
+                hint: 'Ad esempio: 167.9656',
+                type: 'number'
+            },
+        ],
+        simulated: false,
+        solution: Standardizzazione
     }
 
 ];
