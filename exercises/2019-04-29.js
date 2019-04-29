@@ -63,6 +63,6 @@ class Caram {
 
 module.exports = Caram;
 
-const TIMES = 1e7;
+/*const TIMES = 1e7;
 const ex = new Caram(5.96, 0.54, 6.848221, 5.1204223, 5.1204223);
-ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));
+ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));*/

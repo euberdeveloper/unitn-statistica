@@ -747,7 +747,7 @@ module.exports = [
         date: '2019-04-29',
         inputs: [
             {
-                description: 'Scrivere mu:',
+                description: 'Scrivere mu: (Il secondo esercizio è molto approssimato)',
                 hint: 'Ad esempio: 5.96',
                 type: 'number'
             },
