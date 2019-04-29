@@ -24,6 +24,7 @@ const FunDensita = require('./2019-04-16');
 const Integrali = require('./2019-04-17');
 const Densita = require('./2019-04-18');
 const Standardizzazione = require('./2019-04-19');
+const Caram = require('./2019-04-29');
 
 module.exports = [
 
@@ -740,6 +741,39 @@ module.exports = [
         ],
         simulated: false,
         solution: Standardizzazione
+    },
+
+    {
+        date: '2019-04-29',
+        inputs: [
+            {
+                description: 'Scrivere mu:',
+                hint: 'Ad esempio: 5.96',
+                type: 'number'
+            },
+            {
+                description: 'Scrivere sigma:',
+                hint: 'Ad esempio: 0.54',
+                type: 'number'
+            },
+            {
+                description: 'Si scarta se superiore a',
+                hint: 'Ad esempio: 6.848221',
+                type: 'number'
+            },
+            {
+                description: 'Si scarta se inferiore a',
+                hint: 'Ad esempio: 5.1204223',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: valore std. corrispondente a',
+                hint: 'Ad esempio: 5.1204223',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: Caram
     }
 
 ];
