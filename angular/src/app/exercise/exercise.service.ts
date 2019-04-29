@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { DeserializeService } from '../deserialize/deserialize.service';
 import { ProvideExerciseResponse } from '../http/http.service';
 
+import * as vega from 'vega-statistics';
+
 export interface Input {
   description: string;
   type: string;
@@ -30,6 +32,7 @@ export class ExerciseService {
   }
 
   setExercise(exercise: ProvideExerciseResponse) {
+    console.log(this.deser.deserialize(exercise.solution));
     this.exercise = exercise ? {
       date: exercise.date,
       inputs: exercise.inputs,

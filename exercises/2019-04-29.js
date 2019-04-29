@@ -1,3 +1,5 @@
+const vega = require('vega-statistics');
+
 class Caram {
 
     get _pick() {
@@ -13,7 +15,7 @@ class Caram {
     }
 
     constructor(mu, sigma, superiore, inferiore, third) {
-        this.vega = require('vega-statistics');
+        this.vega = vega;
         this.mu = +mu;
         this.sigma = +sigma;
         this.superiore = +superiore;

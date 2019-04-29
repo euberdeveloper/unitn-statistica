@@ -1220,6 +1220,7 @@ var ExerciseService = /** @class */ (function () {
         return this.exercise;
     };
     ExerciseService.prototype.setExercise = function (exercise) {
+        console.log(this.deser.deserialize(exercise.solution));
         this.exercise = exercise ? {
             date: exercise.date,
             inputs: exercise.inputs,
