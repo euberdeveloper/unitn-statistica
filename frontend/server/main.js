@@ -1183,12 +1183,16 @@ exports.AppServerModule = AppServerModule;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var VEGA = __webpack_require__(/*! vega-statistics */ "vega-statistics");
 var i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var DeserializeService = /** @class */ (function () {
     function DeserializeService() {
     }
     DeserializeService.prototype.deserialize = function (classe) {
-        return eval('(' + classe + ')');
+        var vega = VEGA;
+        var res = eval('(' + classe + ')');
+        console.log(res);
+        return res;
     };
     DeserializeService.ngInjectableDef = i0.defineInjectable({ factory: function DeserializeService_Factory() { return new DeserializeService(); }, token: DeserializeService, providedIn: "root" });
     return DeserializeService;
@@ -2936,6 +2940,17 @@ module.exports = require("tslib");
 /***/ (function(module, exports) {
 
 module.exports = require("uuid/v4");
+
+/***/ }),
+
+/***/ "vega-statistics":
+/*!**********************************!*\
+  !*** external "vega-statistics" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("vega-statistics");
 
 /***/ })
 

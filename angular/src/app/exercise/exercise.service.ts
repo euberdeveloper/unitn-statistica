@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { DeserializeService } from '../deserialize/deserialize.service';
 import { ProvideExerciseResponse } from '../http/http.service';
 
-import * as vega from 'vega-statistics';
-
 export interface Input {
   description: string;
   type: string;
