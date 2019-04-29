@@ -36,7 +36,7 @@
     </mat-card-content>
 
     <mat-card-actions id="buttons" fxLayoutAlign="center center">
-      <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="go()">GO</button>
+      <button mat-raised-button color="primary" [disabled]="form.invalid || fetching" (click)="go()">{{ fetching ? 'LOADING' : 'GO' }}</button>
     </mat-card-actions>
 
   </mat-card>

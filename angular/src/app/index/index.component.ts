@@ -17,6 +17,7 @@ export class IndexComponent implements OnInit {
 
   form: FormGroup;
   hidePassword = true;
+  fetching = false;
 
   constructor(
     private router: Router,
@@ -47,12 +48,13 @@ export class IndexComponent implements OnInit {
   }
 
   go() {
-    if (this.form.valid) {
+    if (this.form.valid && !this.fetching) {
       const momentDate = this.exercise.value as Moment;
       const year = momentDate.year();
       const month = momentDate.month();
       const day = momentDate.date();
       const date = year + '-' + (month > 8 ? month + 1 : '0' + (month + 1)) + '-' + (day > 9 ? day : '0' + day);
+      this.fetching = true;
       this.http.provideExercise({
         user: this.user.value,
         password: this.password.value,
@@ -62,13 +64,17 @@ export class IndexComponent implements OnInit {
         result => {
           this.ex.setExercise(result);
           this.router.navigate(['get-solution']);
+          this.fetching = false;
         },
-        error => this.alert.pushSnackbar({
-          type: SnackType.ERROR,
-          message: 'Errore, credenziali errate o data sbagliata',
-          log: 'Error in index post: ',
-          object: error
-        })
+        error => {
+          this.alert.pushSnackbar({
+            type: SnackType.ERROR,
+            message: 'Errore, credenziali errate o data sbagliata',
+            log: 'Error in index post: ',
+            object: error
+          });
+          this.fetching = false;
+        }
       );
     }
   }

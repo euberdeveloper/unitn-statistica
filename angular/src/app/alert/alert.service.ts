@@ -9,11 +9,11 @@ export enum SnackType {
 }
 
 export interface SnackMessage {
-  type: SnackType,
-  message: string,
-  action?: string,
-  log: string,
-  object ?: any
+  type: SnackType;
+  message: string;
+  action?: string;
+  log: string;
+  object ?: any;
 }
 
 @Injectable({
