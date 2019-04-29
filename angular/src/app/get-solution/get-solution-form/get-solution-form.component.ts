@@ -24,6 +24,7 @@ export class GetSolutionFormComponent {
 
   @Input() date: string;
   @Input() simulated: boolean;
+  @Input() notes: string;
   @Output('getSolution') getSolutionEmitter = new EventEmitter<{ inputs: string[], times: number }>();
   form: FormGroup;
 

@@ -22,6 +22,7 @@ export interface ProvideExerciseResponse {
   inputs: Input[];
   solution: string;
   simulated: boolean;
+  notes: string;
 }
 
 const serverDomain = 'https://unitn-statistica.herokuapp.com';

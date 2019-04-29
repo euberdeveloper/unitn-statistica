@@ -10,6 +10,8 @@
 
     <form [formGroup]="form" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
 
+      <app-get-solution-notes *ngIf="notes" fxFlexAlign="stretch" [notes]="notes"></app-get-solution-notes>
+
       <ng-container *ngFor="let input of inputs; let i = index;">
 
         <mat-form-field fxFlexAlign="stretch" *ngIf="input.type !== 'switch'">
@@ -29,8 +31,10 @@
 
       <mat-form-field fxFlexAlign="stretch" *ngIf="simulated">
         <input matInput type="number" placeholder="Tests number" formControlName="times" required />
-        <mat-error *ngIf="getFormControl('times').hasError('required')">This input is <strong>required</strong>
-        </mat-error>
+        <mat-error *ngIf="getFormControl('times').hasError('required')">This input is <strong>required</strong></mat-error>
+        <mat-hint>
+          <span>The bigger it is, the better but longest solution you get</span>
+        </mat-hint>
       </mat-form-field>
 
     </form>

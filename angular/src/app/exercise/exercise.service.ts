@@ -14,6 +14,7 @@ export interface Exercise {
   inputs: Input[];
   solution: any;
   simulated: boolean;
+  notes: string;
 }
 
 @Injectable({
@@ -34,6 +35,7 @@ export class ExerciseService {
       date: exercise.date,
       inputs: exercise.inputs,
       simulated: exercise.simulated,
+      notes: exercise.notes,
       solution: this.deser.deserialize(exercise.solution)
     } : null;
   }

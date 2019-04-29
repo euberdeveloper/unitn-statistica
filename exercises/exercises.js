@@ -745,6 +745,7 @@ module.exports = [
 
     {
         date: '2019-04-29',
+        notes: 'The second exercise could be aproximated, even the first decimal',
         inputs: [
             {
                 description: 'Scrivere mu: (Il secondo esercizio è molto approssimato)',

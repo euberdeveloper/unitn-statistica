@@ -17,6 +17,7 @@ export class GetSolutionComponent implements OnInit {
   inputs: ExerciseInput[] = null;
   date: string;
   simulated: boolean;
+  notes: string;
 
   loading = false;
   progress = 0;
@@ -35,7 +36,8 @@ export class GetSolutionComponent implements OnInit {
       this.notFound = false;
       this.form = true;
       this.simulated = this.exercise.simulated;
-      this.date =this.exercise.date;
+      this.date = this.exercise.date;
+      this.notes = this.exercise.notes;
       this.inputs = this.exercise.inputs;
     }
   }
