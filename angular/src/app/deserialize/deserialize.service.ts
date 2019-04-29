@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
+//Dependencies
 import * as VEGA from 'vega-statistics';
+const vega = VEGA;
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +10,7 @@ import * as VEGA from 'vega-statistics';
 export class DeserializeService {
 
   deserialize(classe: string): any {
-    const vega = VEGA;
-    const res = eval('(' + classe + ')');
-    console.log(res);
-    return res;
+    return eval('(' + classe + ')');
   }
 
 }

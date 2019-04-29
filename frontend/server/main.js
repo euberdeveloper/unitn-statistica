@@ -1183,16 +1183,15 @@ exports.AppServerModule = AppServerModule;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+//Dependencies
 var VEGA = __webpack_require__(/*! vega-statistics */ "vega-statistics");
 var i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
+var vega = VEGA;
 var DeserializeService = /** @class */ (function () {
     function DeserializeService() {
     }
     DeserializeService.prototype.deserialize = function (classe) {
-        var vega = VEGA;
-        var res = eval('(' + classe + ')');
-        console.log(res);
-        return res;
+        return eval('(' + classe + ')');
     };
     DeserializeService.ngInjectableDef = i0.defineInjectable({ factory: function DeserializeService_Factory() { return new DeserializeService(); }, token: DeserializeService, providedIn: "root" });
     return DeserializeService;
@@ -1224,8 +1223,6 @@ var ExerciseService = /** @class */ (function () {
         return this.exercise;
     };
     ExerciseService.prototype.setExercise = function (exercise) {
-        if (exercise)
-            console.log(this.deser.deserialize(exercise.solution));
         this.exercise = exercise ? {
             date: exercise.date,
             inputs: exercise.inputs,
