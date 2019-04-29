@@ -32,7 +32,7 @@ export class ExerciseService {
   }
 
   setExercise(exercise: ProvideExerciseResponse) {
-    console.log(this.deser.deserialize(exercise.solution));
+    if(exercise) console.log(this.deser.deserialize(exercise.solution));
     this.exercise = exercise ? {
       date: exercise.date,
       inputs: exercise.inputs,
