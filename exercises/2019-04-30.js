@@ -14,7 +14,7 @@ class ThirtyApril {
     }
 
     _solveThird() {
-        return this.squared_sigma;
+        return 1;
     }
 
     _solveFourth() {

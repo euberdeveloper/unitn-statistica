@@ -780,7 +780,7 @@ module.exports = [
 
     {
         date: '2019-04-30',
-        notes: 'Non ancora sicuro che il procedimento sia corretto',
+        notes: 'Si tiene conto che g(x) sia STANDARDIZZATA^2. Se questo non è vero, il secondo e il terzo vengono sbagliati.',
         inputs: [
             {
                 description: 'Scrivere mu',
