@@ -25,6 +25,7 @@ const Integrali = require('./2019-04-17');
 const Densita = require('./2019-04-18');
 const Standardizzazione = require('./2019-04-19');
 const Caram = require('./2019-04-29');
+const ThirtyApril = require('./2019-04-30');
 
 module.exports = [
 
@@ -748,12 +749,12 @@ module.exports = [
         notes: 'The second exercise could be aproximated, even the first decimal',
         inputs: [
             {
-                description: 'Scrivere mu: (Il secondo esercizio è molto approssimato)',
+                description: 'Scrivere mu',
                 hint: 'Ad esempio: 5.96',
                 type: 'number'
             },
             {
-                description: 'Scrivere sigma:',
+                description: 'Scrivere sigma',
                 hint: 'Ad esempio: 0.54',
                 type: 'number'
             },
@@ -775,6 +776,25 @@ module.exports = [
         ],
         simulated: true,
         solution: Caram
+    },
+
+    {
+        date: '2019-04-30',
+        notes: 'Non ancora sicuro che il procedimento sia corretto',
+        inputs: [
+            {
+                description: 'Scrivere mu',
+                hint: 'Ad esempio: 6.9',
+                type: 'number'
+            },
+            {
+                description: 'Scrivere sigma',
+                hint: 'Ad esempio: 0.25',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: ThirtyApril
     }
 
 ];
