@@ -26,6 +26,7 @@ const Densita = require('./2019-04-18');
 const Standardizzazione = require('./2019-04-19');
 const Caram = require('./2019-04-29');
 const ThirtyApril = require('./2019-04-30');
+const Cinema = require('./2019-05-01');
 
 module.exports = [
 
@@ -780,7 +781,6 @@ module.exports = [
 
     {
         date: '2019-04-30',
-        notes: 'Si tiene conto che g(x) sia STANDARDIZZATA^2. Se questo non è vero, il secondo e il terzo vengono sbagliati.',
         inputs: [
             {
                 description: 'Scrivere mu',
@@ -795,6 +795,45 @@ module.exports = [
         ],
         simulated: false,
         solution: ThirtyApril
+    },
+
+    {
+        date: '2019-05-01',
+        notes: 'Nel terzo non viene data la risposta. Inserite la vostra soluzione, viene simulata la probabilità in base a quel numero di biglietti e poi potete controllare che sia effettivamente inferiore a quella richiesta. Nei primi due esattamente una persona non trova posto, nel terzo invece almeno una.',
+        inputs: [
+            {
+                description: 'Percentuale persone che non si presentano',
+                hint: 'Ad esempio: 20',
+                type: 'number'
+            },
+            {
+                description: 'N. biglietti sala uno',
+                hint: 'Ad esempio: 19',
+                type: 'number'
+            },
+            {
+                description: 'N. posti sala uno',
+                hint: 'Ad esempio: 17',
+                type: 'number'
+            },
+            {
+                description: 'N. biglietti sala due',
+                hint: 'Ad esempio: 19',
+                type: 'number'
+            },
+            {
+                description: 'N. posti sala due',
+                hint: 'Ad esempio: 18',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: n. biglietti',
+                hint: 'La soluzione che credete sia giusta',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: Cinema
     }
 
 ];
