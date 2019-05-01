@@ -789,7 +789,7 @@ module.exports = [
                 type: 'number'
             },
             {
-                description: 'Scrivere sigma',
+                description: 'Scrivere sigma quadro',
                 hint: 'Ad esempio: 0.25',
                 type: 'number'
             }
