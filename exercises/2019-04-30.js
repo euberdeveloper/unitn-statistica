@@ -10,11 +10,11 @@ class ThirtyApril {
     }   
 
     _solveSecond() {
-        return 0;
+        return 1;
     }
 
     _solveThird() {
-        return 1;
+        return 2;
     }
 
     _solveFourth() {
