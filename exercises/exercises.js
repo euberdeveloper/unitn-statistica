@@ -781,7 +781,7 @@ module.exports = [
 
     {
         date: '2019-04-30',
-        notes: 'Secondo e terzo non sicuri',
+        notes: 'Secondo e terzo non sicuri, fatta utilizzando chi quadro',
         inputs: [
             {
                 description: 'Scrivere mu',
