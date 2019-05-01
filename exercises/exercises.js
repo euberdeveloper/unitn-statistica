@@ -781,6 +781,7 @@ module.exports = [
 
     {
         date: '2019-04-30',
+        notes: 'Secondo e terzo non sicuri',
         inputs: [
             {
                 description: 'Scrivere mu',
