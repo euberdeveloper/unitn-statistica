@@ -27,6 +27,7 @@ const Standardizzazione = require('./2019-04-19');
 const Caram = require('./2019-04-29');
 const ThirtyApril = require('./2019-04-30');
 const Cinema = require('./2019-05-01');
+const Veicoli = require('./2019-05-02');
 
 module.exports = [
 
@@ -835,6 +836,34 @@ module.exports = [
         ],
         simulated: true,
         solution: Cinema
+    },
+
+    {
+        date: '2019-05-02',
+        inputs: [
+            {
+                description: 'Media esponenziale in minuti',
+                hint: 'Ad esempio: 8',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: minore di',
+                hint: 'Ad esempio: 5.4',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: percentuale certezza',
+                hint: 'Ad esempio: 17',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: quanti ALTRI minuti',
+                hint: 'Ad esempio: 4',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Veicoli
     }
 
 ];
