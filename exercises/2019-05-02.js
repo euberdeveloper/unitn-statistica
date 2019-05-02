@@ -34,7 +34,7 @@ class Veicoli {
     }
 
     _solveFourth() {
-        return "function(x) { ifelse(x < 0, 0, (2 * lam * x * exp(-lam * x * x))) }";
+        return "function(x, l) { ifelse(x < 0, 0, (2 * l * x * exp(-l * x * x))) }";
     }
 
     async test(times, callback) {
