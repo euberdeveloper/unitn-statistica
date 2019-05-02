@@ -853,7 +853,7 @@ module.exports = [
             },
             {
                 description: 'Secondo es: percentuale certezza',
-                hint: 'Ad esempio: 17',
+                hint: 'Ad esempio: 87',
                 type: 'number'
             },
             {
