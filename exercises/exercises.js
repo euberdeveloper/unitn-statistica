@@ -28,6 +28,7 @@ const Caram = require('./2019-04-29');
 const ThirtyApril = require('./2019-04-30');
 const Cinema = require('./2019-05-01');
 const Veicoli = require('./2019-05-02');
+const LunaPark = require('./2019-05-03');
 
 module.exports = [
 
@@ -864,6 +865,29 @@ module.exports = [
         ],
         simulated: false,
         solution: Veicoli
+    },
+
+    {
+        date: '2019-05-03',
+        inputs: [
+            {
+                description: 'Probabilità palline',
+                hint: 'Ad esempio: 0.06, 0.28, 0.34, 0.29, 0.03',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: Y = cosa * X',
+                hint: 'Ad esempio: 2',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: numero pallina',
+                hint: 'Ad esempio: 2',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: LunaPark
     }
 
 ];
