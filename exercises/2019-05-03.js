@@ -33,8 +33,8 @@ class LunaPark {
         return (this._pick - media) ** 3;
     }
 
-    _solveThird(second) {
-        return (this.third ** 3) * second;
+    _solveThird() {
+        return ((this.third * this._pick) ** 3);
     }
 
     _solveFourth() {
@@ -47,7 +47,7 @@ class LunaPark {
         let [ first, second, third, fourth ] = values;
         for(let i = current; i < times && i - current < gap; i++) {
             if(i === times / 2) {
-                first = first / i;
+                first /= i;
             }
             if(i >= times / 2) {
                 second += this._solveSecond(first);
@@ -55,10 +55,11 @@ class LunaPark {
             else {
                 first += this._solveFirst();
             }
+            third += this._solveThird();
             if(this._solveFourth()) fourth++;
         }
         if(current + gap >= times) {
-            return [ first, second / (times - times / 2), this._solveThird(second / (times - times / 2)), fourth / times ];
+            return [ first, second / (times - times / 2), third / times, fourth / times ];
         }
         else {
             return await new Promise((resolve, reject) => {
@@ -75,6 +76,6 @@ class LunaPark {
 
 module.exports = LunaPark;
 
-/*const TIMES = 1e6;
+/* const TIMES = 1e6;
 const ex = new LunaPark('0.06, 0.28, 0.34, 0.29, 0.03', 2,  2);
-ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));*/
+ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r)); */
