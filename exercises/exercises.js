@@ -29,6 +29,7 @@ const ThirtyApril = require('./2019-04-30');
 const Cinema = require('./2019-05-01');
 const Veicoli = require('./2019-05-02');
 const LunaPark = require('./2019-05-03');
+const CurvaNormale = require('./2019-05-06');
 
 module.exports = [
 
@@ -888,6 +889,39 @@ module.exports = [
         ],
         simulated: true,
         solution: LunaPark
+    },
+
+    {
+        date: '2019-05-06',
+        inputs: [
+            {
+                description: 'Scrivere mu',
+                hint: 'Ad esempio: -0.38',
+                type: 'number'
+            },
+            {
+                description: 'Scrivere sigma quadro',
+                hint: 'Ad esempio: 9.23',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: scrivere intervallo',
+                hint: 'Ad esempio: -0.05, 0.74',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: scrivere numero',
+                hint: 'Ad esempio: -4.36',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: scrivere numero',
+                hint: 'Ad esempio: 2.15',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: CurvaNormale
     }
 
 ];
