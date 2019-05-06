@@ -18,7 +18,10 @@ export class GetSolutionToggleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => this.toggle.checked = true, 1);
+    setTimeout(() => {
+      this.toggle.checked = true;
+      this.control.setValue(true);
+    }, 1);
   }
 
 }

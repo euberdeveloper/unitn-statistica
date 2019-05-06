@@ -1669,7 +1669,10 @@ var GetSolutionToggleComponent = /** @class */ (function () {
     }
     GetSolutionToggleComponent.prototype.ngOnInit = function () {
         var _this = this;
-        setTimeout(function () { return _this.toggle.checked = true; }, 1);
+        setTimeout(function () {
+            _this.toggle.checked = true;
+            _this.control.setValue(true);
+        }, 1);
     };
     return GetSolutionToggleComponent;
 }());
