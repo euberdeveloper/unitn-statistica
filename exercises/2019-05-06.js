@@ -14,7 +14,8 @@ class CurvaNormale {
         this._first = data.split(',').map(str => str.toUpperCase()).map(str => str.replace(/INF/g, 'Infinity')).map(str => +str);
     }
 
-    constructor(mu, sigmaQuadro, first, second, third) {
+    constructor(version, mu, sigmaQuadro, first, second, third) {
+       this.version = +version;
        this.mu = +mu;
        this.sigma = Math.sqrt(+sigmaQuadro);
        this.first = first;
@@ -26,15 +27,15 @@ class CurvaNormale {
     }
 
     _solveFirst() {
-        return this.first[0] < this.picked && this.picked <= this._first[1];
+        return this.version ? (this.first[0] < this.picked && this.picked <= this._first[1]) : (this.first[0] <= this.picked && this.picked < this._first[1]);
     }
 
     _solveSecond() {
-        return this.picked < this.second;
+        return this.version ? (this.picked < this.second) : (this.picked > this.second);
     }
 
     _solveThird() {
-        return Math.abs(this.picked) > this.third;
+        return this.version ? (Math.abs(this.picked) > this.third) : (Math.abs(this.picked) <= this.third);
     }
 
     async _test(times, current, values, callback) {
@@ -66,5 +67,5 @@ class CurvaNormale {
 module.exports = CurvaNormale;
 
 /*const TIMES = 1e6;
-const ex = new CurvaNormale(-0.38, 9.23, '-0.05, 0.74', -4.36, 2.15);
+const ex = new CurvaNormale(true, -0.38, 9.23, '-0.05, 0.74', -4.36, 2.15);
 ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));*/

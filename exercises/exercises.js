@@ -895,6 +895,11 @@ module.exports = [
         date: '2019-05-06',
         inputs: [
             {
+                description: 'Il secondo ti chiede minore ed il terzo maggiore',
+                hint: 'Deselezionare se è il contrario',
+                type: 'switch'
+            },
+            {
                 description: 'Scrivere mu',
                 hint: 'Ad esempio: -0.38',
                 type: 'number'
