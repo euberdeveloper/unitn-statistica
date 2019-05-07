@@ -47,6 +47,7 @@
     "morgan": "^1.9.1",
     "ng2-adsense": "^5.4.1",
     "ngx-webstorage": "^3.0.2",
+    "random": "^2.1.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
     "uuid": "^3.3.2",

@@ -30,6 +30,7 @@ const Cinema = require('./2019-05-01');
 const Veicoli = require('./2019-05-02');
 const LunaPark = require('./2019-05-03');
 const CurvaNormale = require('./2019-05-06');
+const Settimana = require('./2019-05-07');
 
 module.exports = [
 
@@ -927,6 +928,34 @@ module.exports = [
         ],
         simulated: true,
         solution: CurvaNormale
+    },
+
+    {
+        date: '2019-05-07',
+        inputs: [
+            {
+                description: 'Scrivere lambda',
+                hint: 'Ad esempio: 3',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: più di X',
+                hint: 'Ad esempio: 12',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: al più X',
+                hint: 'Ad esempio: 7',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: almeno X settimane',
+                hint: 'Ad esempio: 5',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: Settimana
     }
 
 ];
