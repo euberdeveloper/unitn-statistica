@@ -1187,6 +1187,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var VEGA = __webpack_require__(/*! vega-statistics */ "vega-statistics");
 var i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var vega = VEGA;
+var RANDOM = __webpack_require__(/*! random */ "random");
+var random = RANDOM;
 var DeserializeService = /** @class */ (function () {
     function DeserializeService() {
     }
@@ -2983,6 +2985,17 @@ module.exports = require("@nguniversal/module-map-ngfactory-loader");
 /***/ (function(module, exports) {
 
 module.exports = require("ngx-webstorage");
+
+/***/ }),
+
+/***/ "random":
+/*!*************************!*\
+  !*** external "random" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("random");
 
 /***/ }),
 
