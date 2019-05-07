@@ -894,6 +894,7 @@ module.exports = [
 
     {
         date: '2019-05-06',
+        notes: 'Mettere almeno 10 milioni come numero di test',
         inputs: [
             {
                 description: 'Il secondo ti chiede minore ed il terzo maggiore',
