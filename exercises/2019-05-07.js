@@ -13,7 +13,7 @@ class Settimana {
         this.third = +third;
 
         this.random = random;
-        this.poisson = random.poisson(lambda);
+        this.poisson = this.random.poisson(+lambda);
     }
 
     _solveFirst() {

@@ -12,6 +12,7 @@ const random = RANDOM;
 export class DeserializeService {
 
   deserialize(classe: string): any {
+    console.log(random);
     return eval('(' + classe + ')');
   }
 
