@@ -31,6 +31,7 @@ const Veicoli = require('./2019-05-02');
 const LunaPark = require('./2019-05-03');
 const CurvaNormale = require('./2019-05-06');
 const Settimana = require('./2019-05-07');
+const Bivariata = require('./2019-05-08');
 
 module.exports = [
 
@@ -957,6 +958,49 @@ module.exports = [
         ],
         simulated: true,
         solution: Settimana
+    },
+
+    {
+        date: '2019-05-08',
+        inputs: [
+            {
+                description: 'Scrivere la prima riga (le probabilità senza k)',
+                hint: 'Ad esempio: -4.18, 3.53, 4.01',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna (le probabilità senza k)',
+                hint: 'Ad esempio: 1.58, 2.37, 2.5',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna con le k',
+                hint: 'Ad esempio: 6, 2, 5',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la seconda colonna con le k',
+                hint: 'Ad esempio: 1, 3, 4',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la terza colonna con le k',
+                hint: 'Ad esempio: 9, 8, 7',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: X = cosa',
+                hint: 'Ad esempio: -1.58',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: Y = cosa',
+                hint: 'Ad esempio: 4.01',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Bivariata
     }
 
 ];
