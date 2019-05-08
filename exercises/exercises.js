@@ -932,6 +932,7 @@ module.exports = [
 
     {
         date: '2019-05-07',
+        notes: 'Mettere almeno 10 milioni di test',
         inputs: [
             {
                 description: 'Scrivere lambda',
