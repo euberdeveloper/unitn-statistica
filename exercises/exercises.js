@@ -990,7 +990,7 @@ module.exports = [
             },
             {
                 description: 'Secondo es: X = cosa',
-                hint: 'Ad esempio: -1.58',
+                hint: 'Ad esempio: 1.58',
                 type: 'number'
             },
             {
