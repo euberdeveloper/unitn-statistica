@@ -32,6 +32,7 @@ const LunaPark = require('./2019-05-03');
 const CurvaNormale = require('./2019-05-06');
 const Settimana = require('./2019-05-07');
 const Bivariata = require('./2019-05-08');
+const BivariataSeconda = require('./2019-05-09');
 
 module.exports = [
 
@@ -1001,6 +1002,64 @@ module.exports = [
         ],
         simulated: false,
         solution: Bivariata
+    },
+
+    {
+        date: '2019-05-09',
+        inputs: [
+            {
+                description: 'Scrivere la prima riga (le probabilità senza k)',
+                hint: 'Ad esempio: -2.28, -1.73, 0.49, 2.94',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna (le probabilità senza k)',
+                hint: 'Ad esempio: -2.37, 1.75, 6.42',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna con le k',
+                hint: 'Ad esempio: 4, 8, 10',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la seconda colonna con le k',
+                hint: 'Ad esempio: 12, 3, 11',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la terza colonna con le k',
+                hint: 'Ad esempio: 2, 1, 6',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la quarta colonna con le k',
+                hint: 'Ad esempio: 5, 9, 7',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: X <= cosa',
+                hint: 'Ad esempio: -2.37',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: Y > cosa',
+                hint: 'Ad esempio: 0.49',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: Y = cosa',
+                hint: 'Ad esempio: -2.28',
+                type: 'number'
+            },
+            {
+                description: 'Quinto es: X = cosa',
+                hint: 'Ad esempio: -2.37',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: BivariataSeconda
     }
 
 ];
