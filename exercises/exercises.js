@@ -1005,7 +1005,7 @@ module.exports = [
     },
 
     {
-        date: '2019-05-09',
+        date: '2020-05-09',
         inputs: [
             {
                 description: 'Scrivere la prima riga (le probabilità senza k)',
