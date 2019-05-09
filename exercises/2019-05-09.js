@@ -45,6 +45,18 @@ class BivariataSeconda {
         return this.primaRiga.filter(val => f(val)).reduce((prev, curr) => prev + this._margY(curr), 0);
     }
 
+    _espettanzaX(y, grado = 1) {
+        return (this.k * this._prob[this.primaRiga.indexOf(y)].reduce((prev, curr, index) => prev + curr * (this.primaColonna[index] ** grado), 0)) / this._margY(y);
+    }
+
+    _espettanzaY(x, grado = 1) {
+        return (this.k * this._prob.map(col => col[this.primaColonna.indexOf(x)]).reduce((prev, curr, index) => prev + curr * (this.primaRiga[index] ** grado), 0)) / this._margX(x);
+    }
+
+    _varianzaY(x) {
+        return this._espettanzaY(x, 2) - (this._espettanzaY(x) ** 2);
+    }
+
     constructor(primaRiga, primaColonna, kFirst, kSecond, kThird, kFourth, second, third, fourth, fifth) {
         this.primaRiga = primaRiga;
         this.primaColonna = primaColonna;
@@ -68,11 +80,11 @@ class BivariataSeconda {
     }
 
     _solveFourth() {
-        return this.k * this._prob[this.primaRiga.indexOf(this.fourth)].reduce((prev, curr, index) => prev + curr * this.primaColonna[index], 0);
+        return this._espettanzaX(this.fourth);
     }
 
     _solveFifth() {
-        return this.k * this._prob.map(col => col[this.primaColonna.indexOf(this.fifth)]).reduce((prev, curr, index) => prev + curr * this.primaRiga[index], 0);
+        return this._varianzaY(this.fifth);
     }
 
     async test(times, callback) {
@@ -84,4 +96,5 @@ module.exports = BivariataSeconda;
 
 /* const TIMES = 1e9;
 const ex = new BivariataSeconda('-2.28, -1.73, 0.49, 2.94', '-2.37, 1.75, 6.42', '4, 8, 10', '12, 3, 11', '2, 1, 6', '5, 9, 7', -2.37, 0.49, -2.28, -2.37);
-ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r)); */
+ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));
+ */
