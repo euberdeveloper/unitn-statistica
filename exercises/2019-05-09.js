@@ -96,5 +96,4 @@ module.exports = BivariataSeconda;
 
 /* const TIMES = 1e9;
 const ex = new BivariataSeconda('-2.28, -1.73, 0.49, 2.94', '-2.37, 1.75, 6.42', '4, 8, 10', '12, 3, 11', '2, 1, 6', '5, 9, 7', -2.37, 0.49, -2.28, -2.37);
-ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));
- */
+ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r)); */

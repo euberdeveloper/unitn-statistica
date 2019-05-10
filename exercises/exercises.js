@@ -1008,12 +1008,12 @@ module.exports = [
         date: '2019-05-09',
         inputs: [
             {
-                description: 'Scrivere la prima riga (le probabilità senza k)',
+                description: 'Scrivere la prima riga (i valori senza k)',
                 hint: 'Ad esempio: -2.28, -1.73, 0.49, 2.94',
                 type: 'text'
             },
             {
-                description: 'Scrivere la prima colonna (le probabilità senza k)',
+                description: 'Scrivere la prima colonna (i valori senza k)',
                 hint: 'Ad esempio: -2.37, 1.75, 6.42',
                 type: 'text'
             },
