@@ -33,6 +33,7 @@ const CurvaNormale = require('./2019-05-06');
 const Settimana = require('./2019-05-07');
 const Bivariata = require('./2019-05-08');
 const BivariataSeconda = require('./2019-05-09');
+const DioBono = require('./2019-05-13');
 
 module.exports = [
 
@@ -1060,6 +1061,49 @@ module.exports = [
         ],
         simulated: false,
         solution: BivariataSeconda
+    },
+
+    {
+        date: '2019-05-13',
+        inputs: [
+            {
+                description: 'Scrivere la prima riga (valori della y)',
+                hint: 'Ad esempio: -9, 1, 3, 10',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna (valori della x)',
+                hint: 'Ad esempio: -3, -2, 10',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere i marginali della x',
+                hint: 'Ad esempio: 0.28, 0.36, 0.36',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna delle probabilità',
+                hint: 'Ad esempio: 0.28, 0.30, 0.29',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la seconda colonna delle probabilità',
+                hint: 'Ad esempio: 0.27, 0.24, 0.20',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la terza colonna delle probabilità',
+                hint: 'Ad esempio: 0.21, 0.20, 0.30',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la quarta colonna delle probabilità',
+                hint: 'Ad esempio: 0.24, 0.26, 0.21',
+                type: 'text'
+            }
+        ],
+        simulated: false,
+        solution: DioBono
     }
 
 ];
