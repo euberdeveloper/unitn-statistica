@@ -35,6 +35,7 @@ const Bivariata = require('./2019-05-08');
 const BivariataSeconda = require('./2019-05-09');
 const DioBono = require('./2019-05-13');
 const Covarianza = require('./2019-05-14');
+const Strade = require('./2019-05-15');
 
 module.exports = [
 
@@ -1153,6 +1154,50 @@ module.exports = [
         ],
         simulated: false,
         solution: Covarianza
+    },
+
+    {
+        date: '2019-05-15',
+        notes: 'Primo risultato sicuro, gli altri non ancora',
+        inputs: [
+            {
+                description: 'Primo es: ore',
+                hint: 'Ad esempio: 1, 6, 7',
+                type: 'text'
+            },
+            {
+                description: 'Probabilità delle y',
+                hint: 'Ad esempio: 0.52, 0.34, 0.14',
+                type: 'text'
+            },
+            {
+                description: 'Prima riga tabella',
+                hint: 'Ad esempio: -2.5, 2, 5.5, 7',
+                type: 'text'
+            },
+            {
+                description: 'Prima colonna valori tabella',
+                hint: 'Ad esempio: 0.28, 0.30, 0.23',
+                type: 'text'
+            },
+            {
+                description: 'Seconda colonna valori tabella',
+                hint: 'Ad esempio: 0.21, 0.22, 0.21',
+                type: 'text'
+            },
+            {
+                description: 'Terza colonna valori tabella',
+                hint: 'Ad esempio: 0.27, 0.19, 0.37',
+                type: 'text'
+            },
+            {
+                description: 'Quarta colonna valori tabella',
+                hint: 'Ad esempio: 0.24, 0.29, 0.19',
+                type: 'text'
+            },
+        ],
+        simulated: true,
+        solution: Strade
     }
 
 ];
