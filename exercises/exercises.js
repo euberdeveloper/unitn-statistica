@@ -34,6 +34,7 @@ const Settimana = require('./2019-05-07');
 const Bivariata = require('./2019-05-08');
 const BivariataSeconda = require('./2019-05-09');
 const DioBono = require('./2019-05-13');
+const Covarianza = require('./2019-05-14');
 
 module.exports = [
 
@@ -1104,6 +1105,54 @@ module.exports = [
         ],
         simulated: false,
         solution: DioBono
+    },
+
+    {
+        date: '2019-05-14',
+        inputs: [
+            {
+                description: 'Scrivere la prima riga (valori della y)',
+                hint: 'Ad esempio: -8, 1.5, 7, 8',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna (valori della x)',
+                hint: 'Ad esempio: -9.5, -4.5, -2.5',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere i marginali della x',
+                hint: 'Ad esempio: 0.29, 0.23, 0.48',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la prima colonna delle probabilità',
+                hint: 'Ad esempio: 0.20, 0.32, 0.25',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la seconda colonna delle probabilità',
+                hint: 'Ad esempio: 0.31, 0.18, 0.26',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la terza colonna delle probabilità',
+                hint: 'Ad esempio: 0.18, 0.23, 0.19',
+                type: 'text'
+            },
+            {
+                description: 'Scrivere la quarta colonna delle probabilità',
+                hint: 'Ad esempio: 0.31, 0.27, 0.30',
+                type: 'text'
+            },
+            {
+                description: 'Primo es: coordinate',
+                hint: 'Ad esempio: -9.5, 7',
+                type: 'text'
+            }
+        ],
+        simulated: false,
+        solution: Covarianza
     }
 
 ];
