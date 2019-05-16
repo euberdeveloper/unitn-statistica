@@ -49,7 +49,7 @@ class Strade {
         return this._prob;
     }
     set prob(data) {
-        this._prob = [ this._parseData(data[0]), this._parseData(data[1]), this._parseData(data[2]), this._parseData(data[3]) ].map(col => col.map((val, index) => val * this.margY[index]));
+        this._prob = data.map(col => this._parseData(col)).map(col => col.map((val, index) => val * this.margY[index]));
     }
 
     get margX() {
@@ -62,7 +62,7 @@ class Strade {
         }
     }
 
-    _espettanzaX(grado = 0) {
+    _espettanzaX(grado = 1) {
         return this.primaRiga.reduce((prev, curr, index) => prev + (curr ** grado) * this.margX[index], 0);
     }
 
