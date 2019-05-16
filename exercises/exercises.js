@@ -1158,7 +1158,6 @@ module.exports = [
 
     {
         date: '2019-05-15',
-        notes: 'Ora dovrebbero andare anche gli ultimi due',
         inputs: [
             {
                 description: 'Primo es: ore',
