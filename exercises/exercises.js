@@ -36,6 +36,7 @@ const BivariataSeconda = require('./2019-05-09');
 const DioBono = require('./2019-05-13');
 const Covarianza = require('./2019-05-14');
 const Strade = require('./2019-05-15');
+const Palopoli = require('./2019-05-16');
 
 module.exports = [
 
@@ -1193,10 +1194,38 @@ module.exports = [
                 description: 'Quarta colonna valori tabella',
                 hint: 'Ad esempio: 0.24, 0.29, 0.19',
                 type: 'text'
-            },
+            }
         ],
         simulated: true,
         solution: Strade
+    },
+
+    {
+        date: '2019-05-16',
+        inputs: [
+            {
+                description: 'P(X = cosa) = P(X = cosa)',
+                hint: 'Ad esempio: 3, 4',
+                type: 'text'
+            },
+            {
+                description: 'Lambda y',
+                hint: 'Ad esempio: 9',
+                type: 'number'
+            },
+            {
+                description: 'Secondo esercizio: X e Z',
+                hint: 'Ad esempio: 15, 17',
+                type: 'text'
+            },
+            {
+                description: 'Terzo esercizio: Z',
+                hint: '17',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Palopoli
     }
 
 ];
