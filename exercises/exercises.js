@@ -37,7 +37,7 @@ const DioBono = require('./2019-05-13');
 const Covarianza = require('./2019-05-14');
 const Strade = require('./2019-05-15');
 const Palopoli = require('./2019-05-16');
-const MacchineSacchetti = require('./2019-05-16');
+const MacchineSacchetti = require('./2019-05-20');
 
 module.exports = [
 
