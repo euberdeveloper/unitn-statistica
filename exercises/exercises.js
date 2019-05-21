@@ -37,6 +37,7 @@ const DioBono = require('./2019-05-13');
 const Covarianza = require('./2019-05-14');
 const Strade = require('./2019-05-15');
 const Palopoli = require('./2019-05-16');
+const MacchineSacchetti = require('./2019-05-16');
 
 module.exports = [
 
@@ -1226,6 +1227,54 @@ module.exports = [
         ],
         simulated: false,
         solution: Palopoli
+    },
+
+    {
+        date: '2019-05-20',
+        inputs: [
+            {
+                description: 'Media rosse',
+                hint: 'Ad esempio: 36',
+                type: 'number'
+            },
+            {
+                description: 'Sigma rosse',
+                hint: 'Ad esempio: 15',
+                type: 'number'
+            },
+            {
+                description: 'Media gialle',
+                hint: 'Ad esempio: 25',
+                type: 'number'
+            },
+            {
+                description: 'Sigma gialle',
+                hint: 'Ad esempio: 11',
+                type: 'number'
+            },
+            {
+                description: 'Costo sacchetto',
+                hint: 'Ad esempio: 0.18',
+                type: 'number'
+            },
+            {
+                description: 'Costo rosse',
+                hint: 'Ad esempio: 0.24',
+                type: 'number'
+            },
+            {
+                description: 'Costo gialle',
+                hint: 'Ad esempio: 0.18',
+                type: 'number'
+            },
+            {
+                description: 'Quarto esercizio: costo maggiore o uguale a cosa',
+                hint: 'Ad esempio: 13.67',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: MacchineSacchetti
     }
 
 ];
