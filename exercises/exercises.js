@@ -38,6 +38,7 @@ const Covarianza = require('./2019-05-14');
 const Strade = require('./2019-05-15');
 const Palopoli = require('./2019-05-16');
 const MacchineSacchetti = require('./2019-05-20');
+const Narkov = require('./2019-05-21');
 
 module.exports = [
 
@@ -1275,6 +1276,50 @@ module.exports = [
         ],
         simulated: false,
         solution: MacchineSacchetti
+    },
+
+    {
+        date: '2019-05-21',
+        notes: 'Ultimo esercizio simulato',
+        inputs: [
+            {
+                description: 'Lambda uno:',
+                hint: 'Ad esempio: 12',
+                type: 'number'
+            },
+            {
+                description: 'Lamba due:',
+                hint: 'Ad esempio: 9',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: maggiore uguale a cosa',
+                hint: 'Ad esempio: 23',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: scrivere i due numeri',
+                hint: 'Ad esempio: 16, 23',
+                type: 'text'
+            },
+            {
+                description: 'Terzo es: Y = cosa X',
+                hint: 'Ad esempio: 1.1',
+                type: 'number'
+            },
+            {
+                description: 'Terzo es: |Y| minore uguale a cosa',
+                hint: 'Ad esempio: 2.5',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: |Y| minore uguale a cosa',
+                hint: 'Ad esempio: 2.5',
+                type: 'number'
+            }
+        ],
+        simulated: true,
+        solution: Narkov
     }
 
 ];
