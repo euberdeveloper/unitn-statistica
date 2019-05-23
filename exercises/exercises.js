@@ -39,6 +39,7 @@ const Strade = require('./2019-05-15');
 const Palopoli = require('./2019-05-16');
 const MacchineSacchetti = require('./2019-05-20');
 const Narkov = require('./2019-05-21');
+const Money = require('./2019-05-22');
 
 module.exports = [
 
@@ -1320,6 +1321,40 @@ module.exports = [
         ],
         simulated: true,
         solution: Narkov
+    },
+
+    {
+        date: '2019-05-22',
+        notes: 'Monete: secondo e quarto esercizio simulati. Albergo: primo e secondo esercizio simulati.',
+        inputs: [
+            {
+                description: 'Ho l\'esercizio delle monete',
+                hint: 'Deselezionare se hai quello dell\'albergo',
+                type: 'switch'
+            },
+            {
+                description: 'Numero di lanci/clienti',
+                hint: 'Ad esempio: 16',
+                type: 'number'
+            },
+            {
+                description: 'Monete: secondo es. Albergo: primo es.',
+                hint: 'Ad esempio: 11',
+                type: 'number'
+            },
+            {
+                description: 'Monete: terzo es. Albergo: secondo es.',
+                hint: 'Ad esempio: Monete: 11, 16 Albergo: 7',
+                type: 'text'
+            },
+            {
+                description: 'Monete: quarto esercizio',
+                hint: 'Ad esempio: 0.62, 16 Albergo: scrivi quello che vuoi',
+                type: 'text'
+            }
+        ],
+        simulated: true,
+        solution: Money
     }
 
 ];
