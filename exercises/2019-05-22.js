@@ -139,7 +139,7 @@ class Money {
 
 module.exports = Money;
 
-const TIMES = 1e6;
+/* const TIMES = 1e6;
 const ex = new Money(true, 16, 11, '11, 16', '0.62, 16');
-/* const ex = new Money(false, 10, 5, 7); */
-ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r));
+/* const ex = new Money(false, 10, 5, 7); 
+ex.test(TIMES, prog => console.log(prog), n => console.log(n)).then(r => console.log(r)); */
