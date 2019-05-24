@@ -1379,6 +1379,7 @@ module.exports = [
 
     {
         date: '2019-05-24',
+        notes: 'Non ancora sicuro al 100%',
         inputs: [
             {
                 description: 'Scrivere i dati separati da virgola',
