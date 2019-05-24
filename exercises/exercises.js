@@ -40,6 +40,7 @@ const Palopoli = require('./2019-05-16');
 const MacchineSacchetti = require('./2019-05-20');
 const Narkov = require('./2019-05-21');
 const Money = require('./2019-05-22');
+const Cerchio = require('./2019-05-23');
 
 module.exports = [
 
@@ -1355,6 +1356,24 @@ module.exports = [
         ],
         simulated: true,
         solution: Money
+    },
+
+    {
+        date: '2019-05-23',
+        inputs: [
+            {
+                description: 'Primo es: X',
+                hint: 'Ad esempio: -0.5',
+                type: 'number'
+            },
+            {
+                description: 'Secondo es: Y',
+                hint: 'Ad esempio: -0.54',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Cerchio
     }
 
 ];
