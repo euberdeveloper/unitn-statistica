@@ -41,6 +41,7 @@ const MacchineSacchetti = require('./2019-05-20');
 const Narkov = require('./2019-05-21');
 const Money = require('./2019-05-22');
 const Cerchio = require('./2019-05-23');
+const Chest = require('./2019-05-24');
 
 module.exports = [
 
@@ -1374,6 +1375,19 @@ module.exports = [
         ],
         simulated: false,
         solution: Cerchio
+    },
+
+    {
+        date: '2019-05-24',
+        inputs: [
+            {
+                description: 'Scrivere i dati separati da virgola',
+                hint: 'Ad esempio: 83.90, 79.80, 79.10, 83.90, 78.90, 77.10, 80.10, 75.60, 78.00, 82.40, 76.90, 78.60, 78.20',
+                type: 'text'
+            }
+        ],
+        simulated: false,
+        solution: Chest
     }
 
 ];
