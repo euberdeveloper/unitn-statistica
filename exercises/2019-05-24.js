@@ -24,7 +24,7 @@ class Chest {
 
     get standardDeviation() {
         if(!this._standardDeviation) {
-            this._standardDeviation = Math.sqrt(this.values.reduce((prev, curr) => prev + ((curr - this.average) ** 2), 0)) / this.n;
+            this._standardDeviation = Math.sqrt(this.values.reduce((prev, curr) => prev + ((curr - this.average) ** 2), 0) / this.n);
         }
         return this._standardDeviation;
     }
