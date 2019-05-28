@@ -33,7 +33,7 @@ class Stimatori {
             case 2:
                 return '(5 / 9)';
             case 3:
-                return '(9 / 24)';
+                return '(7 / 24)';
         }
     }
 
