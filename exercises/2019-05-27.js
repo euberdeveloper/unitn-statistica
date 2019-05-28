@@ -5,12 +5,12 @@ class Stimatori {
     }
 
     _t1(sample) {
-        const [ _, _, x3, _ ] = sample;
+        const [ _x1, _x2, x3, _x4 ] = sample;
         return x3;
     }
 
     _t2(sample) {
-        const [ x1, x2, _, _ ] = sample;
+        const [ x1, x2, _x3, _x4 ] = sample;
         return (x1 + 2 * x2) / 3;
     }
 
