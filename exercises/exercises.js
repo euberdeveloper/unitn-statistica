@@ -43,6 +43,7 @@ const Money = require('./2019-05-22');
 const Cerchio = require('./2019-05-23');
 const Chest = require('./2019-05-24');
 const Stimatori = require('./2019-05-27');
+const Letze = require('./2019-05-28');
 
 module.exports = [
 
@@ -1407,6 +1408,35 @@ module.exports = [
         ],
         simulated: false,
         solution: Stimatori
+    },
+
+    {
+        date: '2019-05-28',
+        notes: 'Non ancora sicuro',
+        inputs: [
+            {
+                description: 'Y = cosa * X',
+                hint: 'Ad esempio: 7',
+                type: 'number'
+            },
+            {
+                description: 'Primo es: campione',
+                hint: 'Ad esempio: 6.69, 3.16, 31.50, 1.72, 3.73, 19.64, 9.75, 11.28',
+                type: 'text'
+            },
+            {
+                description: 'Secondo es: campione',
+                hint: 'Ad esempio: 0.22, 0.11, 0.03, 0.20, 0.01, 0.07, 0.14, 0.06',
+                type: 'text'
+            },
+            {
+                description: 'Z = X - cosa',
+                hint: 'Ad esempio: 7',
+                type: 'number'
+            }
+        ],
+        simulated: false,
+        solution: Letze
     }
 
 ];
