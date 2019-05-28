@@ -42,6 +42,7 @@ const Narkov = require('./2019-05-21');
 const Money = require('./2019-05-22');
 const Cerchio = require('./2019-05-23');
 const Chest = require('./2019-05-24');
+const Stimatori = require('./2019-05-27');
 
 module.exports = [
 
@@ -1388,6 +1389,24 @@ module.exports = [
         ],
         simulated: false,
         solution: Chest
+    },
+
+    {
+        date: '2019-05-27',
+        inputs: [
+            {
+                description: 'Secondo es: numero stimatore (Tcosa)',
+                hint: 'Ad esempio: 3',
+                type: 'number'
+            },
+            {
+                description: 'Quarto es: elenco numeri',
+                hint: 'Ad esempio: 0.40, 1.10, 0.50, 0.00, 2.00, 0.30, 0.40, 0.80, 0.30, 1.20',
+                type: 'text'
+            }
+        ],
+        simulated: false,
+        solution: Stimatori
     }
 
 ];
