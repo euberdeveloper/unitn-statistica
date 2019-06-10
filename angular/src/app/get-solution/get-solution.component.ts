@@ -32,7 +32,7 @@ export class GetSolutionComponent implements OnInit {
 
   ngOnInit() {
     this.exercise = this.ex.getExercise();
-    if(this.exercise) {
+    if (this.exercise) {
       this.notFound = false;
       this.form = true;
       this.simulated = this.exercise.simulated;
@@ -48,7 +48,7 @@ export class GetSolutionComponent implements OnInit {
     const solver = new this.exercise.solution(...inputs);
     solver
       .test(times, (progress: number) => {
-        this.zone.run( () => { this.progress = (progress / times) * 100 } );
+        this.zone.run( () => (this.progress = (progress / times) * 100) );
       })
       .then((solution: number[]) => {
         this.loading = false;

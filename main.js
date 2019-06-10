@@ -24,7 +24,7 @@ const FieldValue = admin.firestore.FieldValue;
 
 enableProdMode();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const DIST_FOLDER = path.join(process.cwd(), 'frontend');
 const AUTH = {
     user: 'lagrange',

@@ -9,7 +9,7 @@ import { UserInfo } from '../http/http.service';
 })
 export class UserInfoService {
 
-  private static readonly USER_INFO_KEY = "unitn-statistica-uuid";
+  private static readonly USER_INFO_KEY = 'unitn-statistica-uuid';
   id: string = null;
 
   get info(): UserInfo {
@@ -19,12 +19,11 @@ export class UserInfoService {
     };
   }
 
-  constructor(private storage: LocalStorageService) { 
+  constructor(private storage: LocalStorageService) {
     const id = storage.retrieve(UserInfoService.USER_INFO_KEY);
-    if(id) {
+    if (id) {
       this.id = id;
-    }
-    else {
+    } else {
       this.id = uuid();
       storage.store(UserInfoService.USER_INFO_KEY, this.id);
     }

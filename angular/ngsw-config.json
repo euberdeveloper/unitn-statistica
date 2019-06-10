@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,8 +13,7 @@
           "/*.js"
         ]
       }
-    }, 
-    {
+    }, {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
@@ -21,10 +21,6 @@
         "files": [
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-        ],
-        "urls": [
-          "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
-          "https://fonts.googleapis.com/icon?family=Material+Icons"
         ]
       }
     }

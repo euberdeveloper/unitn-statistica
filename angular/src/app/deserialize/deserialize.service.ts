@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-//Dependencies
+// Dependencies
 import * as VEGA from 'vega-statistics';
 const vega = VEGA;
 import * as RANDOM from 'random';
@@ -12,7 +12,7 @@ const random = RANDOM;
 export class DeserializeService {
 
   deserialize(classe: string): any {
-    console.log(random)
+    // tslint:disable-next-line:no-eval
     return eval('(' + classe + ')');
   }
 

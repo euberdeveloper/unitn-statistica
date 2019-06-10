@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatSlideToggle } from '@angular/material';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 import { Input as ExerciseInput } from '../../../exercise/exercise.service';
 
@@ -11,7 +11,7 @@ import { Input as ExerciseInput } from '../../../exercise/exercise.service';
 })
 export class GetSolutionToggleComponent implements OnInit {
 
-  @ViewChild('toggle') toggle: MatSlideToggle;
+  @ViewChild('toggle', { static: false }) toggle: MatSlideToggle;
   @Input() control: FormControl;
   @Input() input: ExerciseInput;
 

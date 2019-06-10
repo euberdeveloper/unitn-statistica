@@ -10,13 +10,13 @@ import { Input as ExerciseInput } from '../../exercise/exercise.service';
 })
 export class GetSolutionFormComponent {
 
-  @Input() 
+  @Input()
   get inputs(): ExerciseInput[] {
     return this._inputs;
   }
   set inputs(inputs: ExerciseInput[]) {
     this._inputs = inputs;
-    if(inputs) {
+    if (inputs) {
       this.form = this.fb.group({ ...inputs.map(_input => [ null, Validators.required ]), times: [ null, (this.simulated ? Validators.required : []) ] });
     }
   }
@@ -35,7 +35,7 @@ export class GetSolutionFormComponent {
   }
 
   getSolution(): void {
-    if(this.form.valid) {
+    if (this.form.valid) {
       const { times, ...inputs } = this.form.value;
       this.getSolutionEmitter.emit({ inputs: Object.values(inputs), times: times || 1 });
     }

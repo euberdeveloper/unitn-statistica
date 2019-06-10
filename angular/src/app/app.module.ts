@@ -7,9 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-
 import { MaterialModule } from './material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +19,8 @@ import { GetSolutionProgressComponent } from './get-solution/get-solution-progre
 import { GetSolutionSolutionComponent } from './get-solution/get-solution-solution/get-solution-solution.component';
 import { GetSolutionToggleComponent } from './get-solution/get-solution-form/get-solution-toggle/get-solution-toggle.component';
 import { GetSolutionNotesComponent } from './get-solution/get-solution-form/get-solution-notes/get-solution-notes.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
