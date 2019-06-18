@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -25,7 +25,7 @@ export interface ProvideExerciseResponse {
   notes: string;
 }
 
-const serverDomain = 'https://unitn-statistica.herokuapp.com';
+const serverDomain = isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
 
 const httpOptions = {
   headers: new HttpHeaders({

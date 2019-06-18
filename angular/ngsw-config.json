@@ -5,13 +5,12 @@
     {
       "name": "exercises-requests",
       "urls": [
-        "https://unitn-statistica.herokuapp.com/api/provide-exercise"
+        "/api/provide-exercise"
       ],
       "cacheConfig": {
-        "strategy": "freshness",
+        "strategy": "performance",
         "maxSize": 100,
-        "maxAge": "3d",
-        "timeout": "2s"
+        "maxAge": "3d"
       }
     }
   ],

@@ -1957,12 +1957,13 @@ exports.GetSolutionComponent = GetSolutionComponent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 const http_1 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
 const rxjs_1 = __webpack_require__(/*! rxjs */ "rxjs");
 const operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
 const i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
 const i1 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
-const serverDomain = 'https://unitn-statistica.herokuapp.com';
+const serverDomain = core_1.isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
 const httpOptions = {
     headers: new http_1.HttpHeaders({
         'Content-Type': 'application/json'
