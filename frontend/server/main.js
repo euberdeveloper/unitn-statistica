@@ -1963,7 +1963,6 @@ const rxjs_1 = __webpack_require__(/*! rxjs */ "rxjs");
 const operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
 const i0 = __webpack_require__(/*! @angular/core */ "@angular/core");
 const i1 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
-const serverDomain = core_1.isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
 const httpOptions = {
     headers: new http_1.HttpHeaders({
         'Content-Type': 'application/json'
@@ -1973,8 +1972,11 @@ class HttpService {
     constructor(http) {
         this.http = http;
     }
+    get serverDomain() {
+        return core_1.isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
+    }
     provideExercise(body) {
-        return this.http.post(serverDomain + '/api/provide-exercise', body, httpOptions)
+        return this.http.post(this.serverDomain + '/api/provide-exercise', body, httpOptions)
             .pipe(operators_1.catchError(this.handleError));
     }
     handleError(err) {

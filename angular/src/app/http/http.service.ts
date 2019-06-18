@@ -25,8 +25,6 @@ export interface ProvideExerciseResponse {
   notes: string;
 }
 
-const serverDomain = isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -38,10 +36,15 @@ const httpOptions = {
 })
 export class HttpService {
 
+  get
+  serverDomain(): string {
+    return isDevMode() ? 'https://unitn-statistica.herokuapp.com' : '';
+  }
+
   constructor(private http: HttpClient) { }
 
   provideExercise(body: ProvideExerciseBody): Observable<ProvideExerciseResponse> {
-    return this.http.post<ProvideExerciseResponse>(serverDomain + '/api/provide-exercise', body, httpOptions)
+    return this.http.post<ProvideExerciseResponse>(this.serverDomain + '/api/provide-exercise', body, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
