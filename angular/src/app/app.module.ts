@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { Angulartics2Module } from 'angulartics2';
 
 import { MaterialModule } from './material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
@@ -42,6 +43,7 @@ import { environment } from '../environments/environment';
     MaterialModule,
     NgxWebstorageModule.forRoot(),
     AppRoutingModule,
+    Angulartics2Module.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

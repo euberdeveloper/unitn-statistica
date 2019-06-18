@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 import { Subscription } from 'rxjs';
 
 import { AlertService, SnackType, SnackMessage } from './alert/alert.service';
@@ -15,8 +16,11 @@ export class AppComponent {
 
   constructor(
     private snackbar: MatSnackBar,
-    private alert: AlertService
-    ) { }
+    private alert: AlertService,
+    angulartics2GoogleTagManager: Angulartics2GoogleTagManager
+    ) {
+      angulartics2GoogleTagManager.startTracking();
+    }
 
   ngOnInit(): void {
     this.alertSubscription = this.alert.snackbar.subscribe(
