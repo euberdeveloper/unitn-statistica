@@ -5,7 +5,7 @@
     {
       "name": "exercises-requests",
       "urls": [
-        "/api/provide-exercise"
+        "https://unitn-statistica.herokuapp.com/api/provide-exercise"
       ],
       "cacheConfig": {
         "strategy": "freshness",

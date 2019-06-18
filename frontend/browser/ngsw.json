@@ -41,7 +41,7 @@
     {
       "name": "exercises-requests",
       "patterns": [
-        "\\/api\\/provide-exercise"
+        "https://unitn-statistica.herokuapp.com/api/provide-exercise"
       ],
       "strategy": "freshness",
       "maxSize": 100,
