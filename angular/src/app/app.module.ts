@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+const a = Angulartics2GoogleAnalytics;
 
 import { MaterialModule } from './material/material.module';
 import { MAT_DATE_LOCALE } from '@angular/material';
