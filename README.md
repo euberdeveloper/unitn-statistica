@@ -18,14 +18,19 @@ NB: Sometimes, expecially when exercises seems impossible to simulate, the simul
 
 * Go to the website: [https://unitn-statistica.herokuapp.com/index](https://unitn-statistica.herokuapp.com/index)
 * Type the credentials (__lagrange__, __lagragna__) and select the exercise date. If you are offline or there was not an exercise in that date, an error toast will be desplayed.
+
 ![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/index.png)
 * Insert your exercises' values/parameters, by carefully following the fields instructions. Put a big number, one million or something, in the test iterations field. The bigger you put, the better you'll get but the longer you'll wait.
-![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form.png)
-![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form_filled.png)
+
+![Exercise form](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form.png)
+
+![Exercise form filled](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_form_filled.png)
 * Wait till the script has finished to execute. There is a pretty loading spinner wich shows you the current progress.
-![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_loading.png)
+
+![Exercise loading](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_loading.png)
 * Check the solutions.
-![Index](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_solutions.png)
+
+![Exercise solutions](https://github.com/euberdeveloper/unitn-statistica/blob/master/doc/exercise_solutions.png)
 
 ## How it was made
 The server was made with **Javascript**, specifically by using **NodeJs**. It sends to the client js scripts to run the simulations and serves the frontend. The frontend was made with **Angular**, by using **Angular Material** and **Angular Flexbox** for the style and **Angular Universal** to have an efficient server-side rendering. There is also the **Angular Service Worker**, wich makes the site a **pwa**.
