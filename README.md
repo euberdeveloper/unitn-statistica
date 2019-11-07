@@ -10,7 +10,7 @@ These is a project consisting on a server where simulation scripts to get aproxi
 Let's say that a new assignment asks to solve a statistic problem and the problem is to calculate the probability of getting number three after a six-faced dice is tossed. There are two possibilities to solve the problem. The **first** is solving the problem, by applying math rules. This is the best way, but you must be good and you are never 100% sure of doing the exercise right. The **second** is to execute by hand the experiment and get an aproximate result. The more iterations you do, the better the result is. In this case, let's say you should toss a dice ten million times and count how many times the number three is came up. You can't mistake it, but it is quite long. So, I made a **third** way, wich is **computer simulation**. I make a script simulate a dice toss millions of times and count how many times number three is came up. So you get a good approximated solution and you don't have to lose tons of your time.
 
 ## When to use it
-**This project is based on computer simulations. Neither it gives perfect solutions nor it provides you the steps needed to solve it mathematically. You still have to solve your exercises by yourself - the only advantage is that you will never be unsure again, you only will need to check if the results are similar to the simulated ones.**
+**This project is based on computer simulations. Neither gives it perfect solutions nor provides it you the steps needed to solve it mathematically. You still have to solve your exercises by yourself - the only advantage is that you will never be unsure again, you only will need to check if the results are similar to the simulated ones.**
 
 ## How to use it
 
