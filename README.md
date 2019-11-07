@@ -12,8 +12,6 @@ Let's say that a new assignment asks to solve a statistic problem and the proble
 ## When to use it
 **This project is based on computer simulations. Neither it gives perfect solutions nor it provides you the steps needed to solve it mathematically. You still have to solve your exercises by yourself - the only advantage is that you will never be unsure again, you only will need to check if the results are similar to the simulated ones.**
 
-NB: Sometimes, expecially when exercises seems impossible to simulate, the simulation scripts run so super-fast that you even won't see the loading spinner. Neither if you iterate it billions of times. Ostensibly, you could think that they are not simulated at all, that I put only a formula or solving algorithm, but still they are simulated, trust me...
-
 ## How to use it
 
 * Go to the website: [https://unitn-statistica.herokuapp.com/index](https://unitn-statistica.herokuapp.com/index)
